@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QA.Interface", "QA.Interface\QA.Interface.csproj", "{20CEC77A-150E-46A1-B742-EA1BCC4B57EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QA", "QA\QA.csproj", "{FF4B3FC1-969A-4794-830E-4A70BD2F22D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QA.Content.Test", "QA.Content.Test\QA.Content.Test.csproj", "{40B0EEE9-ED73-43D0-A2A0-F0B4CE847C28}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{20CEC77A-150E-46A1-B742-EA1BCC4B57EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20CEC77A-150E-46A1-B742-EA1BCC4B57EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20CEC77A-150E-46A1-B742-EA1BCC4B57EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20CEC77A-150E-46A1-B742-EA1BCC4B57EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF4B3FC1-969A-4794-830E-4A70BD2F22D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF4B3FC1-969A-4794-830E-4A70BD2F22D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF4B3FC1-969A-4794-830E-4A70BD2F22D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF4B3FC1-969A-4794-830E-4A70BD2F22D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40B0EEE9-ED73-43D0-A2A0-F0B4CE847C28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40B0EEE9-ED73-43D0-A2A0-F0B4CE847C28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40B0EEE9-ED73-43D0-A2A0-F0B4CE847C28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40B0EEE9-ED73-43D0-A2A0-F0B4CE847C28}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

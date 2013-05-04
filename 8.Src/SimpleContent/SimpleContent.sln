@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleContent", "SimpleContent\SimpleContent.csproj", "{88C12BD7-C311-49FE-B00B-160EC76DE4AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleLib", "SimpleLib\SimpleLib.csproj", "{4CF67980-A161-48BF-B05D-AF31F1CFFBBA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{88C12BD7-C311-49FE-B00B-160EC76DE4AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88C12BD7-C311-49FE-B00B-160EC76DE4AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88C12BD7-C311-49FE-B00B-160EC76DE4AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88C12BD7-C311-49FE-B00B-160EC76DE4AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CF67980-A161-48BF-B05D-AF31F1CFFBBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CF67980-A161-48BF-B05D-AF31F1CFFBBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CF67980-A161-48BF-B05D-AF31F1CFFBBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CF67980-A161-48BF-B05D-AF31F1CFFBBA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
