@@ -43,7 +43,7 @@
   <ItemGroup>
     <Compile Include="ActiveParam.cs" />
     <Compile Include="ActiveParameterCollection.cs" />
-    <Compile Include="Content.cs" />
+    <Compile Include="ContentBase.cs" />
     <Compile Include="ContentCollection.cs" />
     <Compile Include="ContentManager.cs" />
     <Compile Include="IContainer.cs" />
