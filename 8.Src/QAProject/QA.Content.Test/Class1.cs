@@ -7,12 +7,12 @@ using System.Text;
 
 namespace QA.Content.Test
 {
-    public class Class1 : QA.Interface.Content
+    public class Class1 : QA.Interface.ContentBase
     {
         Timer _t = new Timer();
         public Class1()
         {
-            _t.Interval = 1000;
+            _t.Interval = 10*1000;
             _t.Tick += new EventHandler(_t_Tick);
             _t.Start();
         }

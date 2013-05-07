@@ -15,10 +15,10 @@ namespace QA.Interface
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
-        public Content GetContentByName(string name, bool ignoreCase)
+        public ContentBase GetContentByName(string name, bool ignoreCase)
         {
             name = name.Trim ();
-            foreach (Content content in this)
+            foreach (ContentBase content in this)
             {
                 if (string.Compare(name, content.Name, ignoreCase) == 0)
                 {
@@ -35,7 +35,7 @@ namespace QA.Interface
         /// <returns></returns>
         public bool Contains(string name)
         {
-            Content content = GetContentByName(name, true);
+            ContentBase content = GetContentByName(name, true);
             return content != null;
         }
     }

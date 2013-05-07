@@ -9,7 +9,7 @@ namespace QA.Interface
     /// <summary>
     /// 
     /// </summary>
-    public abstract class Content : IContent
+    public abstract class ContentBase : IContent
     {
         /// <summary>
         /// 
