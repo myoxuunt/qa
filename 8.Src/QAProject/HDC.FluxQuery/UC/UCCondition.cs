@@ -5,12 +5,12 @@ using System.Drawing;
 using System.Data;
 using System.Text;
 using System.Windows.Forms;
+using Xdgk.Common;
 
 namespace HDC.FluxQuery
 {
     public partial class UCCondition : UserControl
     {
-        static public readonly string TEXT_ALL = "<全部>";
         /// <summary>
         /// 
         /// </summary>
@@ -22,6 +22,9 @@ namespace HDC.FluxQuery
         public UCCondition()
         {
             InitializeComponent();
+
+            this.Begin = DateTime.Now.Date;
+            this.End = DateTime.Now.Date + TimeSpan.FromDays(1d);
         }
 
         /// <summary>
@@ -45,64 +48,19 @@ namespace HDC.FluxQuery
                 return (int)this.cmbStationName.SelectedValue;
             }
         }
-
         /// <summary>
         /// 
         /// </summary>
-        public void BindStationName()
+        public void BindStationName(KeyValueCollection kvs)
         {
-            //HunBeiDBDataContext db = DBFactory.Create();
-            //var q = from p in db.tblStation
-            //        select new
-            //        {
-            //            Text = p.Name,
-            //            Value = p.StationID
-            //            //Value = p
-            //        };
-            //System.Collections.IList list = q.ToList();
-            //if (IsAddAll)
-            //{
-            //    list.Insert(0,
-            //        new
-            //        {
-            //            Text = "<全部>",
-            //            Value = -1
-            //        }
-            //        );
-
-            //}
-            DataTable tbl = DBI.GetStationDataTable();
-            this.cmbStationName.DisplayMember = "StationName";
-            this.cmbStationName.ValueMember = "StationName";
-            this.cmbStationName.DataSource = tbl;
-
-        }
-
-        #region IsAddAll
-        /// <summary>
-        /// 
-        /// </summary>
-        public bool IsAddAll
-        {
-            get
+            if ( kvs == null )
             {
-                return _isAddAll;
+                throw new ArgumentNullException("kvs");
             }
-            set
-            {
-                _isAddAll = value;
-            }
-        } private bool _isAddAll = true;
-        #endregion //IsAddAll
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void UCCondition_Load(object sender, EventArgs e)
-        {
-            //BindStationName();
+            this.cmbStationName.DisplayMember = "Key";
+            this.cmbStationName.ValueMember = "Value";
+            this.cmbStationName.DataSource = kvs;
         }
 
         /// <summary>
@@ -114,6 +72,10 @@ namespace HDC.FluxQuery
             {
                 return this.dtpBeginDate.Value.Date + this.dtpBeginTime.Value.TimeOfDay;
             }
+            set {
+                this.dtpBeginDate.Value = value;
+                this.dtpBeginTime.Value = value;
+            }
         }
 
         /// <summary>
@@ -124,6 +86,11 @@ namespace HDC.FluxQuery
             get
             {
                 return this.dtpEndDate.Value.Date + this.dtpEndTime.Value.TimeOfDay;
+            }
+            set
+            {
+                this.dtpEndDate.Value = value;
+                this.dtpEndTime.Value = value;
             }
         }
 

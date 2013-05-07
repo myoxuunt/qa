@@ -1,6 +1,6 @@
 ﻿namespace HDC.FluxQuery
 {
-    partial class frmDataQuery
+    partial class frmHDQuery
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ucDataGridView1 = new HDC.FluxQuery.UCDataGridView();
             this.ucCondition1 = new HDC.FluxQuery.UCCondition();
+            this.ucDataGridView1 = new HDC.FluxQuery.UCDataGridView();
             this.SuspendLayout();
+            // 
+            // ucCondition1
+            // 
+            this.ucCondition1.Begin = new System.DateTime(2013, 5, 7, 0, 0, 0, 0);
+            this.ucCondition1.End = new System.DateTime(2013, 5, 8, 0, 0, 0, 0);
+            this.ucCondition1.Location = new System.Drawing.Point(0, 12);
+            this.ucCondition1.Name = "ucCondition1";
+            this.ucCondition1.Size = new System.Drawing.Size(218, 204);
+            this.ucCondition1.TabIndex = 1;
             // 
             // ucDataGridView1
             // 
@@ -39,26 +48,19 @@
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.ucDataGridView1.Location = new System.Drawing.Point(224, 12);
             this.ucDataGridView1.Name = "ucDataGridView1";
-            this.ucDataGridView1.Size = new System.Drawing.Size(493, 295);
-            this.ucDataGridView1.TabIndex = 1;
+            this.ucDataGridView1.Size = new System.Drawing.Size(448, 286);
+            this.ucDataGridView1.TabIndex = 2;
             // 
-            // ucCondition1
-            // 
-            this.ucCondition1.Location = new System.Drawing.Point(0, 12);
-            this.ucCondition1.Name = "ucCondition1";
-            this.ucCondition1.Size = new System.Drawing.Size(218, 204);
-            this.ucCondition1.TabIndex = 0;
-            // 
-            // frmDataQuery
+            // frmHDQuery
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(729, 319);
+            this.ClientSize = new System.Drawing.Size(684, 310);
             this.Controls.Add(this.ucDataGridView1);
             this.Controls.Add(this.ucCondition1);
-            this.Name = "frmDataQuery";
-            this.Text = "frmDataQuery";
-            this.Load += new System.EventHandler(this.frmDataQuery_Load);
+            this.Name = "frmHDQuery";
+            this.Text = "frmHDQuery";
+            this.Load += new System.EventHandler(this.frmHDQuery_Load);
             this.ResumeLayout(false);
 
         }

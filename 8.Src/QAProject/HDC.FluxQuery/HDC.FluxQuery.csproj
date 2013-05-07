@@ -44,18 +44,35 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="DBI.cs" />
     <Compile Include="frmDataQuery.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmDataQuery.Designer.cs">
       <DependentUpon>frmDataQuery.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmHDQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHDQuery.Designer.cs">
+      <DependentUpon>frmHDQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Images.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Images.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="t.cs" />
-    <Compile Include="UCDataGridView.cs">
+    <Compile Include="Strings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="DGVColumnConfigCollectionFactory.cs" />
+    <Compile Include="UC\UCDataGridView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UCDataGridView.Designer.cs">
+    <Compile Include="UC\UCDataGridView.Designer.cs">
       <DependentUpon>UCDataGridView.cs</DependentUpon>
     </Compile>
     <Compile Include="UC\UCCondition.cs">
@@ -76,7 +93,21 @@
       <DependentUpon>frmDataQuery.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="UCDataGridView.resx">
+    <EmbeddedResource Include="frmHDQuery.resx">
+      <DependentUpon>frmHDQuery.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Images.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Images.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Strings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\UCDataGridView.resx">
       <DependentUpon>UCDataGridView.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -84,6 +115,13 @@
       <DependentUpon>UCCondition.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Config\FluxColumnConfig.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resource\Lightning.ico" />
+    <None Include="Resource\History.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

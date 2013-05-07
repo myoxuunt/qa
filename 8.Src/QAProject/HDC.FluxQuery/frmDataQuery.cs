@@ -1,13 +1,17 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using Xdgk.Common ;
 
 namespace HDC.FluxQuery
 {
+    using Path = System.IO.Path;
+
     public partial class frmDataQuery : Form
     {
         public frmDataQuery()
@@ -15,24 +19,43 @@ namespace HDC.FluxQuery
             InitializeComponent();
         }
 
+        private string GetConfigFilePath()
+        {
+            return Path.Combine(
+                Path.GetDirectoryName(this.GetType().Assembly.Location),
+                "config\\fluxColumnConfig.xml"
+                );
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void frmDataQuery_Load(object sender, EventArgs e)
         {
-            this.ucCondition1.BindStationName();
-            this.ucDataGridView1.DgvColumnConfigs = DGVColumnConfigCollectionFactory.Create(Lines);
+            this.Text = Strings.title_flux_form;
+
+            this.ucCondition1.BindStationName(
+                GetStationNameKeyValues()
+                );
+            this.ucDataGridView1.DgvColumnConfigs =
+                DGVColumnConfigCollectionFactory.CreateFromXml(GetConfigFilePath ());
             this.ucCondition1.QueryEvent += new EventHandler(ucCondition1_QueryEvent);
         }
 
-        private string[] Lines
+        private KeyValueCollection GetStationNameKeyValues()
         {
-            get {
-                return new string[] { 
-                    "dataPropertyName=StationName;Text=站名;",
-                    "dataPropertyName=DT;Text=时间;Format=G",
-                    "dataPropertyName=InstantFlux;Text=瞬时流量(m3/s);Format=f2",
-                    "dataPropertyName=Sum;Text=累计流量(m3);Format=f3"
-                };
+            KeyValueCollection kvs = new KeyValueCollection();
+            DataTable tbl = DBI.GetStationDataTable("scl6");
+            foreach (DataRow row in tbl.Rows)
+            {
+                kvs.Add(new KeyValue(row["StationName"].ToString().Trim(), row));
             }
+
+            return kvs;
         }
+
         /// <summary>
         /// 
         /// </summary>
@@ -46,7 +69,7 @@ namespace HDC.FluxQuery
 
             DataTable tbl = DBI.ExecuteFluxDataTable(b, end, stationName);
             //this.ucDataGridView1.DataGridView.AutoGenerateColumns = true;
-            this.ucDataGridView1.BindDataSource(tbl);
+            this.ucDataGridView1.DataSource = tbl;
         }
     }
 }

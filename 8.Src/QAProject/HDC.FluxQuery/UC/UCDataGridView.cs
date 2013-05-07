@@ -20,14 +20,12 @@ namespace HDC.FluxQuery
             InitDataGridView();
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="dataSource"></param>
-        public void BindDataSource(object dataSource)
+        public object DataSource
         {
-            this.dataGridView1.DataSource = dataSource;
+            get { return this.dataGridView1.DataSource; }
+            set { this.dataGridView1.DataSource = value; }
         }
+
 
         /// <summary>
         /// 
@@ -91,6 +89,9 @@ namespace HDC.FluxQuery
         private void InitDataGridView()
         {
             this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToAddRows = false;
         }
 
         /// <summary>

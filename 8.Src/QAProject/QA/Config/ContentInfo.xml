@@ -2,7 +2,7 @@
 <contentInfoCollection>
  <contentInfo 
     path="f:\QAPROJECT\8.Src\QAProject\HDC.FluxQuery\bin\Debug\HDC.FluxQuery.dll"
-    parentMenu="mnuHelp"
+    parentMenu="mnuData"
     parentToolbar="ToolStripMain">
   </contentInfo>
   <!--

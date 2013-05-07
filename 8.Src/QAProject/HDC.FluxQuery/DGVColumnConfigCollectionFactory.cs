@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Xml;
 using System.Collections.Generic;
 using System.Text;
 using Xdgk.Common;
@@ -78,6 +79,40 @@ namespace HDC.FluxQuery
                 r.Add(item);
             }
             return r; 
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="path"></param>
+        /// <returns></returns>
+        static public DGVColumnConfigCollection CreateFromXml(string path)
+        {
+            DGVColumnConfigCollection r = new DGVColumnConfigCollection();
+
+            XmlDocument doc = new XmlDocument();
+            doc.Load(path);
+            XmlNode root = doc.SelectSingleNode("columns");
+            foreach (XmlNode node in root.SelectNodes("column"))
+            {
+                string dataPropertyName= XmlHelper.GetAttribute(node, "dataPropertyName", false);
+                string text = XmlHelper.GetAttribute(node, "text", false);
+                string format = XmlHelper.GetAttribute(node, "format", true);
+                string strWidth = XmlHelper.GetAttribute(node, "width", true);
+
+
+                int width = 100 ;
+                if ( !string.IsNullOrEmpty (strWidth ))
+                {
+                    width = int.Parse ( strWidth );
+                }
+                DGVColumnConfig item = new DGVColumnConfig(
+                    dataPropertyName, format, text);
+                item.Width = width;
+                r.Add(item);
+            }
+
+            return r;
         }
     }
 }
