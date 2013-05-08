@@ -15,16 +15,22 @@ namespace HDC.FluxQuery
     /// </summary>
     public class DataQueryContent : QA.Interface.ContentBase 
     {
+
+        #region Name
         public override string Name
         {
             get { return this.GetType().Name; }
         }
+        #endregion //Name
 
+        #region Description
         public override string Description
         {
             get { return string.Empty; }
         }
+        #endregion //Description
 
+        #region Load
         /// <summary>
         /// 
         /// </summary>
@@ -39,7 +45,9 @@ namespace HDC.FluxQuery
             CreateHDQueryUI(parentMenuItem, parentToolStrip);
 
         }
+        #endregion //Load
 
+        #region CreateHDQueryUI
         private void CreateHDQueryUI(System.Windows.Forms.ToolStripMenuItem parentMenuItem, System.Windows.Forms.ToolStrip parentToolStrip)
         {
             ToolStripItem hdMenuItem = parentMenuItem.DropDownItems.Add(Strings.mnu_hd_query);
@@ -55,18 +63,24 @@ namespace HDC.FluxQuery
 
             parentToolStrip.Items.Add(hdQueryButton);
         }
+        #endregion //CreateHDQueryUI
 
+        #region hdQueryButton_Click
         void hdQueryButton_Click(object sender, EventArgs e)
         {
             ShowAndActiveFluxQuery(typeof(frmHDQuery));
         }
+        #endregion //hdQueryButton_Click
 
+        #region hdMenuItem_Click
         void hdMenuItem_Click(object sender, EventArgs e)
         {
             ShowAndActiveFluxQuery(typeof(frmHDQuery));
         }
+        #endregion //hdMenuItem_Click
 
 
+        #region CreateFluxQueryUI
         private void CreateFluxQueryUI(System.Windows.Forms.ToolStripMenuItem parentMenuItem, System.Windows.Forms.ToolStrip parentToolStrip)
         {
             ToolStripItem item = parentMenuItem.DropDownItems.Add(Strings.mnu_flux_query);
@@ -82,7 +96,9 @@ namespace HDC.FluxQuery
 
             parentToolStrip.Items.Add(fluxQueryButton);
         }
+        #endregion //CreateFluxQueryUI
 
+        #region fluxQueryButton_Click
         /// <summary>
         /// 
         /// </summary>
@@ -92,7 +108,9 @@ namespace HDC.FluxQuery
         {
             ShowAndActiveFluxQuery(typeof(frmDataQuery));
         }
+        #endregion //fluxQueryButton_Click
 
+        #region item_Click
         /// <summary>
         /// 
         /// </summary>
@@ -102,7 +120,9 @@ namespace HDC.FluxQuery
         {
             ShowAndActiveFluxQuery(typeof(frmDataQuery));
         }
+        #endregion //item_Click
 
+        #region ShowAndActiveFluxQuery
         private void ShowAndActiveFluxQuery(Type typeOfForm)
         {
             Form f = GetOrCreateForm(typeOfForm);
@@ -110,7 +130,9 @@ namespace HDC.FluxQuery
             f.Show();
             f.Activate();
         }
+        #endregion //ShowAndActiveFluxQuery
 
+        #region GetOrCreateForm
         /// <summary>
         /// 
         /// </summary>
@@ -135,10 +157,13 @@ namespace HDC.FluxQuery
             }
             return r;
         }
+        #endregion //GetOrCreateForm
 
+        #region Execute
         public override void Execute(string name, QA.Interface.ParameterCollection inParameters, 
             QA.Interface.ParameterCollection outParameters)
         {
         }
+        #endregion //Execute
     }
 }

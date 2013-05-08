@@ -13,12 +13,16 @@ namespace HDC.FluxQuery
 {
     public class DBI : Xdgk.Common.DBIBase
     {
+
+        #region DBI
         public DBI(string connString)
             : base(connString)
         {
 
         }
+        #endregion //DBI
 
+        #region GetDefault
         static private DBI GetDefault()
         {
             if (_dbi == null)
@@ -27,7 +31,9 @@ namespace HDC.FluxQuery
             }
             return _dbi;
         } static private DBI _dbi;
+        #endregion //GetDefault
 
+        #region GetStationDataTable
         /// <summary>
         /// 
         /// </summary>
@@ -39,7 +45,9 @@ namespace HDC.FluxQuery
             sql = string.Format(sql, deviceType);
             return dbi.ExecuteDataTable(sql);
         }
+        #endregion //GetStationDataTable
 
+        #region ExecuteFluxDataTable
         /// <summary>
         /// 
         /// </summary>
@@ -57,7 +65,9 @@ namespace HDC.FluxQuery
 
             return GetDefault().ExecuteDataTable(cmd);
         }
+        #endregion //ExecuteFluxDataTable
 
+        #region ExecuteHDDataTable
         internal static DataTable ExecuteHDDataTable(string stationName, DateTime b, DateTime e)
         {
             string sql = @"
@@ -72,6 +82,7 @@ namespace HDC.FluxQuery
 
             return GetDefault().ExecuteDataTable(cmd);
         }
+        #endregion //ExecuteHDDataTable
     }
 
 }
