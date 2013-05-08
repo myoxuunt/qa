@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
+using Xdgk.Common;
 
 namespace QA.Interface
 {
     /// <summary>
     /// 
     /// </summary>
-    public interface IContent
+    public interface IContent : IOrderNumber 
     {
         /// <summary>
         /// 

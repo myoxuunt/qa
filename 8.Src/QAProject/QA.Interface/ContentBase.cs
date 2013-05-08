@@ -45,6 +45,15 @@ namespace QA.Interface
         /// <summary>
         /// 
         /// </summary>
+        public int OrderNumber
+        {
+            get { return _orderNumber; }
+            set { _orderNumber = value; }
+        } private int _orderNumber;
+
+        /// <summary>
+        /// 
+        /// </summary>
         /// <param name="parentMenuItem"></param>
         /// <param name="parentToolStrip"></param>
         public abstract void Load(ToolStripMenuItem parentMenuItem, ToolStrip parentToolStrip);

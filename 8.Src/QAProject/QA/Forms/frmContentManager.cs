@@ -92,6 +92,7 @@ namespace QA
             s += string.Format("位置: {0}\r\n", assembly.Location);
             s += string.Format("名称: {0}\r\n", content.Name);
             s += string.Format("描述: {0}\r\n", content.Description);
+            s += string.Format("序号: {0}\r\n", content.OrderNumber);
             s += string.Format("版本: {0}\r\n", assembly.GetName ().Version);
 
             this.txtContent.Text = s;

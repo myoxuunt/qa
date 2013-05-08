@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Reflection;
 using System.Collections.Generic;
 using System.Text;
+using Xdgk.Common;
 using QA.Interface;
 
 namespace QA
@@ -33,7 +34,7 @@ namespace QA
         /// </summary>
         /// <param name="path"></param>
         /// <returns></returns>
-        static public IContent Create(string path)
+        static public IContent[] Create(string path)
         {
             Assembly assembly = null;
             try
@@ -46,19 +47,30 @@ namespace QA
                 return null;
             }
 
+            //List<IContent> r = new List<IContent>();
+            OrderNumberCollection<IContent> r = new OrderNumberCollection<IContent>();
 
             foreach (Type tp in assembly.GetTypes())
             {
                 if (IsImplementInterface(tp, typeof(IContent)))
                 {
                     IContent c = (IContent)Activator.CreateInstance(tp);
-                    return c;
+                    //return c;
+                    r.Add(c);
                 }
             }
 
-            string msg = string.Format("Create fail from '{0}'", path);
-            ProcessException(msg);
-            return null;
+            if (r.Count == 0)
+            {
+                string msg = string.Format("Create fail from '{0}'", path);
+                ProcessException(msg);
+                //return null;
+            }
+            r.Sort();
+
+            IContent[] array = new IContent[r.Count];
+            r.CopyTo(array, 0);
+            return array;
         }
 
         /// <summary>

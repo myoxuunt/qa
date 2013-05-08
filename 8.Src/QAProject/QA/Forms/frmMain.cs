@@ -121,9 +121,9 @@ namespace QA
             if (dr == DialogResult.OK)
             {
                 string path = ofd.FileName;
-                IContent content = ContentFactory.Create(path);
+                IContent[] contents = ContentFactory.Create(path);
 
-                if (content != null)
+                foreach (IContent content in contents)
                 {
                     if (QAApp.App.Container.ContentManager.ContentCollection.Contains(content.Name))
                     {

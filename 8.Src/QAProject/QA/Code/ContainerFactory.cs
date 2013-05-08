@@ -29,8 +29,9 @@ namespace QA
             Container container = new Container();
             foreach (ContentInfo ci in cim.ContentInfoCollection)
             {
-                IContent content = ContentFactory.Create(ci.Path);
-                if (content != null)
+                IContent[] contents = ContentFactory.Create(ci.Path);
+                //if (content != null)
+                foreach (IContent content in contents)
                 {
                     // check content
                     // 

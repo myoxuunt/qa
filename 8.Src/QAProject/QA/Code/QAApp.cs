@@ -9,47 +9,22 @@ namespace QA
     /// <summary>
     /// 
     /// </summary>
-    public class QAApp
+    public class QAApp : AppBase 
     {
+
+        #region QAApp
         /// <summary>
         /// 
         /// </summary>
         private QAApp()
         {
-            Application.ThreadException += new System.Threading.ThreadExceptionEventHandler(Application_ThreadException);
-            System.AppDomain.CurrentDomain.UnhandledException += new UnhandledExceptionEventHandler(CurrentDomain_UnhandledException);
+            // init container
+            //
+            object obj = this.Container;
         }
+        #endregion //QAApp
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
-        {
-            ProcessException(e.ExceptionObject as Exception );
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="exception"></param>
-        private void ProcessException(Exception exception)
-        {
-            NUnit.UiKit.UserMessage.DisplayFailure(exception.Message);
-            Environment.Exit(0);
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void Application_ThreadException(object sender, System.Threading.ThreadExceptionEventArgs e)
-        {
-            ProcessException(e.Exception);
-        }
-
+        #region App
         /// <summary>
         /// 
         /// </summary>
@@ -64,7 +39,9 @@ namespace QA
                 return _app;
             }
         } static private QAApp _app;
+        #endregion //App
 
+        #region Container
         /// <summary>
         /// 
         /// </summary>
@@ -75,20 +52,20 @@ namespace QA
                 if (_container == null)
                 {
                     //_container = new Container();
-                    _container = ContainerFactory.Create(this.ContentInfoManager, this.MainForm);
+                    _container = ContainerFactory.Create(this.ContentInfoManager, (frmMain)this.MainForm);
                     _container.App = this;
                     _container.MainForm = this.MainForm;
                 }
                 return _container;
             }
         } private Container _container;
-
+        #endregion //Container
 
         #region MainForm
         /// <summary>
         /// 
         /// </summary>
-        public frmMain MainForm
+        public override Form MainForm
         {
             get
             {
@@ -98,13 +75,11 @@ namespace QA
                 }
                 return _mainForm;
             }
-            set
-            {
-                _mainForm = value;
-            }
         } private frmMain _mainForm;
+       
         #endregion //MainForm
 
+        #region ContentInfoManager
         /// <summary>
         /// 
         /// </summary>
@@ -119,6 +94,7 @@ namespace QA
                 return _contentInfoManager;
             }
         } private ContentInfoManager _contentInfoManager;
+        #endregion //ContentInfoManager
 
         #region ErrorManager
         /// <summary>
@@ -161,30 +137,5 @@ namespace QA
             }
         } private Config _config;
         #endregion //Config
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public void Run()
-        {
-            if (Diagnostics.HasPreInstance())
-            {
-                return;
-            }
-
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-
-
-
-            object obj = this.Container;
-            Application.Run(this.MainForm);
-        }
-
-        void notifyIcon_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("a");
-        }
     }
 }
