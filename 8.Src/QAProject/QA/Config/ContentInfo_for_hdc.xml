@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<contentInfoCollection>
+ <contentInfo 
+    path=".\c\HDC.FluxQuery.dll"
+    parentMenu="mnuData"
+    parentToolbar="ToolStripMain">
+  </contentInfo>
+  <!--
+   <contentInfo 
+    path="c:\2.dll"
+    parentMenu="mnuHelp"
+    parentToolbar="ToolStripMain">
+
+  </contentInfo>-->
+</contentInfoCollection>
