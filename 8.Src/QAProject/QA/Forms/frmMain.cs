@@ -12,11 +12,15 @@ namespace QA
 {
     public partial class frmMain : Form
     {
+
+        #region frmMain
         public frmMain()
         {
             InitializeComponent();
         }
+        #endregion //frmMain
 
+        #region FindMenuItem
         /// <summary>
         /// 
         /// </summary>
@@ -33,7 +37,9 @@ namespace QA
             }
             return null;
         }
+        #endregion //FindMenuItem
 
+        #region FindToolStrip
         /// <summary>
         /// 
         /// </summary>
@@ -54,7 +60,22 @@ namespace QA
             }
             return null;
         }
+        #endregion //FindToolStrip
 
+        #region IsDebugMode
+        /// <summary>
+        /// 
+        /// </summary>
+        private bool IsDebugMode
+        {
+            get
+            {
+                return QAApp.App.Config.CommandLineOptions.IsDebugMode;
+            }
+        }
+        #endregion //IsDebugMode
+
+        #region frmMain_Load
         /// <summary>
         /// 
         /// </summary>
@@ -62,6 +83,8 @@ namespace QA
         /// <param name="e"></param>
         private void frmMain_Load(object sender, EventArgs e)
         {
+            this.mnuDebug.Visible = IsDebugMode;
+
             this.Text = QAApp.App.Config.AppName;
 
             //
@@ -69,7 +92,9 @@ namespace QA
             this.mnuShowToolbar.Checked = this.toolStripMain.Visible;
             this.mnuShowStatusbar.Checked = this.statusStripMain.Visible;
         }
+        #endregion //frmMain_Load
 
+        #region mnuContentManager_Click
         /// <summary>
         /// 
         /// </summary>
@@ -80,7 +105,9 @@ namespace QA
             frmContentManager f = new frmContentManager();
             f.ShowDialog(this);
         }
+        #endregion //mnuContentManager_Click
 
+        #region mnuLoadContent_Click
         /// <summary>
         /// 
         /// </summary>
@@ -110,7 +137,9 @@ namespace QA
                 }
             }
         }
+        #endregion //mnuLoadContent_Click
 
+        #region mnuExit_Click
         /// <summary>
         /// 
         /// </summary>
@@ -120,7 +149,9 @@ namespace QA
         {
             this.Close();
         }
+        #endregion //mnuExit_Click
 
+        #region mnuAbout_Click
         /// <summary>
         /// 
         /// </summary>
@@ -130,7 +161,9 @@ namespace QA
         {
             About();
         }
+        #endregion //mnuAbout_Click
 
+        #region About
         /// <summary>
         /// 
         /// </summary>
@@ -142,7 +175,9 @@ namespace QA
                 Application.ProductVersion);
             NUnit.UiKit.UserMessage.DisplayInfo(s);
         }
+        #endregion //About
 
+        #region mnuShowToolbar_Click
         /// <summary>
         /// 
         /// </summary>
@@ -153,7 +188,9 @@ namespace QA
             this.toolStripMain.Visible = !this.mnuShowToolbar.Checked;
             this.mnuShowToolbar.Checked = !this.mnuShowToolbar.Checked;
         }
+        #endregion //mnuShowToolbar_Click
 
+        #region mnuShowStatusbar_Click
         /// <summary>
         /// 
         /// </summary>
@@ -164,10 +201,13 @@ namespace QA
             this.statusStripMain.Visible = !this.mnuShowStatusbar.Checked;
             this.mnuShowStatusbar.Checked = !this.mnuShowStatusbar.Checked;
         }
+        #endregion //mnuShowStatusbar_Click
 
+        #region notifyIcon1_BalloonTipClicked
         private void notifyIcon1_BalloonTipClicked(object sender, EventArgs e)
         {
 
         }
+        #endregion //notifyIcon1_BalloonTipClicked
     }
 }

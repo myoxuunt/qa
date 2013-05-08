@@ -44,35 +44,35 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Config.cs" />
-    <Compile Include="Container.cs" />
-    <Compile Include="ContainerFactory.cs" />
-    <Compile Include="ContentFactory.cs" />
-    <Compile Include="ContentInfo.cs" />
-    <Compile Include="ContentInfoCollection.cs" />
-    <Compile Include="ContentInfoFactory.cs" />
-    <Compile Include="ContentInfoManager.cs" />
-    <Compile Include="Error.cs" />
-    <Compile Include="ErrorCollection.cs" />
-    <Compile Include="frmContentManager.cs">
+    <Compile Include="Code\Config.cs" />
+    <Compile Include="Code\Container.cs" />
+    <Compile Include="Code\ContainerFactory.cs" />
+    <Compile Include="Code\ContentFactory.cs" />
+    <Compile Include="Code\ContentInfo.cs" />
+    <Compile Include="Code\ContentInfoCollection.cs" />
+    <Compile Include="Code\ContentInfoFactory.cs" />
+    <Compile Include="Code\ContentInfoManager.cs" />
+    <Compile Include="Code\Error.cs" />
+    <Compile Include="Code\ErrorCollection.cs" />
+    <Compile Include="Forms\frmContentManager.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmContentManager.Designer.cs">
+    <Compile Include="Forms\frmContentManager.Designer.cs">
       <DependentUpon>frmContentManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMain.cs">
+    <Compile Include="Forms\frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMain.Designer.cs">
+    <Compile Include="Forms\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="Code\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmContentManager.resx">
+    <EmbeddedResource Include="Forms\frmContentManager.resx">
       <DependentUpon>frmContentManager.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMain.resx">
+    <EmbeddedResource Include="Forms\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -95,8 +95,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="QAApp.cs" />
-    <Compile Include="XmlHelper.cs" />
+    <Compile Include="Code\QAApp.cs" />
+    <Compile Include="Code\XmlHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\QA.Interface\QA.Interface.csproj">

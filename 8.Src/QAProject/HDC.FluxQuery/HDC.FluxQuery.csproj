@@ -43,7 +43,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="DataQueryContent.cs" />
     <Compile Include="DBI.cs" />
     <Compile Include="frmDataQuery.cs">
       <SubType>Form</SubType>

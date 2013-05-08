@@ -10,6 +10,23 @@ namespace QA
     /// </summary>
     public class Config
     {
+        #region CommandLineOptions
+        /// <summary>
+        /// 
+        /// </summary>
+        public CommandLineOptions CommandLineOptions
+        {
+            get
+            {
+                return _commandLineOptions;
+            }
+            set
+            {
+                _commandLineOptions = value;
+            }
+        } private CommandLineOptions _commandLineOptions;
+        #endregion //CommandLineOptions
+
         #region AppName
         /// <summary>
         /// 
