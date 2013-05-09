@@ -30,8 +30,6 @@
         {
             this.menuStripMain = new System.Windows.Forms.MenuStrip();
             this.mnuFile = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuContentManager = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.mnuExit = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuData = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuDebug = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,6 +44,7 @@
             this.mnuAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStripMain = new System.Windows.Forms.StatusStrip();
             this.toolStripMain = new System.Windows.Forms.ToolStrip();
+            this.mnuContentManager = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,29 +66,15 @@
             // mnuFile
             // 
             this.mnuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuContentManager,
-            this.toolStripSeparator1,
             this.mnuExit});
             this.mnuFile.Name = "mnuFile";
             this.mnuFile.Size = new System.Drawing.Size(59, 20);
             this.mnuFile.Text = "文件(&F)";
             // 
-            // mnuContentManager
-            // 
-            this.mnuContentManager.Name = "mnuContentManager";
-            this.mnuContentManager.Size = new System.Drawing.Size(130, 22);
-            this.mnuContentManager.Text = "插件(C)...";
-            this.mnuContentManager.Click += new System.EventHandler(this.mnuContentManager_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(127, 6);
-            // 
             // mnuExit
             // 
             this.mnuExit.Name = "mnuExit";
-            this.mnuExit.Size = new System.Drawing.Size(130, 22);
+            this.mnuExit.Size = new System.Drawing.Size(152, 22);
             this.mnuExit.Text = "退出(&X)";
             this.mnuExit.Click += new System.EventHandler(this.mnuExit_Click);
             // 
@@ -102,8 +87,9 @@
             // mnuDebug
             // 
             this.mnuDebug.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuLoadContent,
-            this.toolStripSeparator2});
+            this.mnuContentManager,
+            this.toolStripSeparator2,
+            this.mnuLoadContent});
             this.mnuDebug.Name = "mnuDebug";
             this.mnuDebug.Size = new System.Drawing.Size(59, 20);
             this.mnuDebug.Text = "调试(&D)";
@@ -111,14 +97,14 @@
             // mnuLoadContent
             // 
             this.mnuLoadContent.Name = "mnuLoadContent";
-            this.mnuLoadContent.Size = new System.Drawing.Size(130, 22);
+            this.mnuLoadContent.Size = new System.Drawing.Size(152, 22);
             this.mnuLoadContent.Text = "加载(&L)...";
             this.mnuLoadContent.Click += new System.EventHandler(this.mnuLoadContent_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(127, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
             // 
             // mnuSetting
             // 
@@ -191,6 +177,13 @@
             this.toolStripMain.TabIndex = 2;
             this.toolStripMain.Text = "toolStrip1";
             // 
+            // mnuContentManager
+            // 
+            this.mnuContentManager.Name = "mnuContentManager";
+            this.mnuContentManager.Size = new System.Drawing.Size(152, 22);
+            this.mnuContentManager.Text = "插件(C)...";
+            this.mnuContentManager.Click += new System.EventHandler(this.mnuContentManager_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -217,20 +210,19 @@
         private System.Windows.Forms.StatusStrip statusStripMain;
         private System.Windows.Forms.ToolStrip toolStripMain;
         private System.Windows.Forms.ToolStripMenuItem mnuFile;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem mnuExit;
         private System.Windows.Forms.ToolStripMenuItem mnuHelp;
         private System.Windows.Forms.ToolStripMenuItem mnuAbout;
         private System.Windows.Forms.ToolStripMenuItem mnuData;
         private System.Windows.Forms.ToolStripMenuItem mnuSetting;
         private System.Windows.Forms.ToolStripMenuItem mnuOption;
-        private System.Windows.Forms.ToolStripMenuItem mnuContentManager;
         private System.Windows.Forms.ToolStripMenuItem mnuDebug;
         private System.Windows.Forms.ToolStripMenuItem mnuLoadContent;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem mnuShowToolbar;
         private System.Windows.Forms.ToolStripMenuItem mnuShowStatusbar;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripMenuItem mnuContentManager;
     }
 }
 

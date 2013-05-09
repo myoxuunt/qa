@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="DataQueryContent.cs" />
     <Compile Include="DBI.cs" />
+    <Compile Include="FormHelper.cs" />
     <Compile Include="frmDataQuery.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,6 +58,7 @@
     <Compile Include="frmHDQuery.Designer.cs">
       <DependentUpon>frmHDQuery.cs</DependentUpon>
     </Compile>
+    <Compile Include="HDContent.cs" />
     <Compile Include="Images.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
