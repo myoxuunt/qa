@@ -14,17 +14,23 @@ namespace QA.Interface
         /// <summary>
         /// 
         /// </summary>
-        public abstract string Name
+        public virtual string Name
         {
-            get;
+            get
+            {
+                return this.GetType().Name;
+            }
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public abstract string Description
+        public virtual string Description
         {
-            get;
+            get
+            {
+                return string.Empty;
+            }
         }
 
         /// <summary>
@@ -45,7 +51,7 @@ namespace QA.Interface
         /// <summary>
         /// 
         /// </summary>
-        public int OrderNumber
+        virtual public int OrderNumber
         {
             get { return _orderNumber; }
             set { _orderNumber = value; }

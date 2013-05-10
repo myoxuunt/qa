@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 9.125" name="Bcdb">
+  <DataContextMoniker Name="/BcdbDataContext" />
+  <nestedChildShapes>
+    <classShape Id="dc1900cc-0548-4d04-89f0-b389b30c176f" absoluteBounds="1.375, 0.5, 2, 1.7855859375">
+      <DataClassMoniker Name="/BcdbDataContext/tblStation" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8b423f78-0042-49c1-a5a3-206a8090ff2d" absoluteBounds="1.3900000000000001, 0.96, 1.9700000000000002, 1.2255859375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="237d2f86-5498-4851-ba93-8ebe0078117a" absoluteBounds="4.375, 0.5, 2, 1.9542057291666666">
+      <DataClassMoniker Name="/BcdbDataContext/tblDevice" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e7e1f478-c61f-43ff-987d-47bf3d027954" absoluteBounds="4.3900000000000006, 0.96, 1.9700000000000002, 1.3942057291666665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.375 : 1.39279296875); (4.375 : 1.39279296875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BcdbDataContext/tblStation/tblStation_tblDevice" />
+      <nodes>
+        <classShapeMoniker Id="dc1900cc-0548-4d04-89f0-b389b30c176f" />
+        <classShapeMoniker Id="237d2f86-5498-4851-ba93-8ebe0078117a" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="45fed6a7-6a96-49dc-ac4b-332f2546ea00" absoluteBounds="4.5, 3, 2, 2.2914453125">
+      <DataClassMoniker Name="/BcdbDataContext/tblMeasureSluiceData" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d0f4f907-c6fb-4112-9f9c-a2e530d32fd9" absoluteBounds="4.5150000000000006, 3.46, 1.9700000000000002, 1.7314453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.4375 : 2.45420572916667); (5.4375 : 3)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BcdbDataContext/tblDevice/tblDevice_tblMeasureSluiceData" />
+      <nodes>
+        <classShapeMoniker Id="237d2f86-5498-4851-ba93-8ebe0078117a" />
+        <classShapeMoniker Id="45fed6a7-6a96-49dc-ac4b-332f2546ea00" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="fc894b0c-7c56-4210-8e51-acdbf8945974" absoluteBounds="1, 3, 2, 1.2797265625">
+      <DataClassMoniker Name="/BcdbDataContext/tblMeasureSluiceDataLast" />
+      <nestedChildShapes>
+        <elementListCompartment Id="99b55e53-94be-43cf-9790-d5245d58a1d7" absoluteBounds="1.0150000000000001, 3.46, 1.9700000000000002, 0.7197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.5 : 3.63986328125); (3 : 3.63986328125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/BcdbDataContext/tblMeasureSluiceData/tblMeasureSluiceData_tblMeasureSluiceDataLast" />
+      <nodes>
+        <classShapeMoniker Id="45fed6a7-6a96-49dc-ac4b-332f2546ea00" />
+        <classShapeMoniker Id="fc894b0c-7c56-4210-8e51-acdbf8945974" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="972ef93b-6a67-46b8-810a-dcdbdcab0622" absoluteBounds="0.875, 4.875, 2, 1.9542057291666666">
+      <DataClassMoniker Name="/BcdbDataContext/vStationDevice" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8f560093-f038-40ff-90f4-f78b69a693d8" absoluteBounds="0.89000000000000012, 5.335, 1.9700000000000002, 1.3942057291666665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="66320c56-7dde-4b63-b725-ca42936efa80" absoluteBounds="4.625, 6.125, 2, 2.7973046875">
+      <DataClassMoniker Name="/BcdbDataContext/vMeasureSluiceData" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dd0cf6eb-1a28-4448-b657-e6e6ac37d4d1" absoluteBounds="4.64, 6.585, 1.9700000000000002, 2.2373046875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8cef0a3f-22eb-4473-9708-fcaba7cbb951" absoluteBounds="3, 4.625, 2, 2.6286848958333331">
+      <DataClassMoniker Name="/BcdbDataContext/vMeasureSluiceDataLast" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f2497292-ff23-4a74-a8d4-474bfea6dd0d" absoluteBounds="3.015, 5.085, 1.9700000000000002, 2.068684895833333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
