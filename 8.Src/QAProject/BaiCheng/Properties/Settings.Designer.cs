@@ -32,5 +32,16 @@ namespace BaiCheng.Properties {
                 return ((string)(this["bcDBConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::NUnit.Core.AssemblyHelper Setting {
+            get {
+                return ((global::NUnit.Core.AssemblyHelper)(this["Setting"]));
+            }
+            set {
+                this["Setting"] = value;
+            }
+        }
     }
 }

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <contentInfoCollection>
  <contentInfo 
-    path=".\c\HDC.FluxQuery.dll"
+    path=".\c\BaiCheng.dll"
     parentMenu="mnuData"
     parentToolbar="ToolStripMain">
   </contentInfo>
