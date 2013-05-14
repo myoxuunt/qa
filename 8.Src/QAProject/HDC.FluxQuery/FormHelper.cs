@@ -13,7 +13,7 @@ namespace HDC.FluxQuery
 {
     public class FormHelper
     {
-#region ShowAndActiveFluxQuery
+        #region ShowAndActiveFluxQuery
         static public void ShowAndActiveFluxQuery(Form parentForm, Type typeOfForm)
         {
             Form f = GetOrCreateForm(parentForm, typeOfForm);
@@ -21,9 +21,9 @@ namespace HDC.FluxQuery
             f.Show();
             f.Activate();
         }
-#endregion //ShowAndActiveFluxQuery
+        #endregion //ShowAndActiveFluxQuery
 
-#region GetOrCreateForm
+        #region GetOrCreateForm
         /// <summary>
         /// 
         /// </summary>
@@ -48,7 +48,7 @@ namespace HDC.FluxQuery
             }
             return r;
         }
-#endregion //GetOrCreateForm
+        #endregion //GetOrCreateForm
     }
 
 }

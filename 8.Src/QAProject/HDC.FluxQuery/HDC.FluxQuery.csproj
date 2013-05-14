@@ -122,6 +122,7 @@
     <Content Include="Config\FluxColumnConfig.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Setup\qa_hdc.iss" />
     <None Include="Resource\Lightning.ico" />
     <None Include="Resource\History.ico" />
   </ItemGroup>

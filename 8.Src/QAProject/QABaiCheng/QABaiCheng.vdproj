@@ -487,9 +487,9 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:数据查询(BC)"
+        "ProductName" = "8:数据查询"
         "ProductCode" = "8:{55178299-0736-4F56-BB23-8B16BC807C3E}"
-        "PackageCode" = "8:{A6A25BBA-7E1D-474C-8017-62C325222C37}"
+        "PackageCode" = "8:{5EC7BD43-1F45-4213-9A06-D56A0A7C8C83}"
         "UpgradeCode" = "8:{383F3A27-FEA9-402B-A3E4-31B67222286D}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
@@ -608,6 +608,34 @@
         }
         "Shortcut"
         {
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_10A94CA8CAAD4C0280AFB58797A68548"
+            {
+            "Name" = "8:数据查询"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_D0AEFBFC2FAA4AFC99519210FE2584A3"
+            "Folder" = "8:_4355855B23594F608CDAD83F96BC3648"
+            "WorkingFolder" = "8:_01948DF8C66445E58FBEF941A09B2282"
+            "Icon" = "8:"
+            "Feature" = "8:"
+            }
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_DF648326397940F0B8AC1F0911F65515"
+            {
+            "Name" = "8:数据查询"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_D0AEFBFC2FAA4AFC99519210FE2584A3"
+            "Folder" = "8:_C286F4B6F67D4CFEA9DE795C9BD830D1"
+            "WorkingFolder" = "8:_01948DF8C66445E58FBEF941A09B2282"
+            "Icon" = "8:"
+            "Feature" = "8:"
+            }
         }
         "UserInterface"
         {
