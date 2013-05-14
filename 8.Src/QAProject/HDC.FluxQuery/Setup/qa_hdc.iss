@@ -13,6 +13,7 @@
 #define OutputBaseName          "qa_hdc"
 #define ContentSourceDir        "..\bin\Debug\"
 #define ContentDestDir			"C"
+#define SetupBin				"bin"
 
 
 [Setup]
@@ -30,7 +31,7 @@ AppUpdatesURL       ={#MyAppURL}
 DefaultDirName      ={pf}\{#CompanyName}\{#MyAppDir}
 DefaultGroupName    ={#MyAppName}
 OutputDir           =.         
-OutputBaseFilename  ={#OutputBaseName}_{#MyAppVersion}
+OutputBaseFilename  ={#SetupBin}\{#OutputBaseName}_{#MyAppVersion}
 Compression         =lzma
 SolidCompression    =yes
 
