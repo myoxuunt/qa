@@ -15,6 +15,18 @@
 #define ContentDestDir			"C"
 #define SetupBin				"bin"
 
+// 
+// 2.0 3.5 4.0
+//
+#define DotNetFx20              "2.0"
+#define DotNetFx35              "3.5"
+#define DotNetFx40              "4.0"
+
+#define DotNetFxNeed            "2.0"
+
+#define MsgNeedDotNetFx20       "此安装程序需要 .NET Framework 版本 2.0, 请安装 .NET Framework 版本, 然后重新运行此安装程序."
+#define MsgNeedDotNetFx35       "此安装程序需要 .NET Framework 版本 3.5, 请安装 .NET Framework 版本, 然后重新运行此安装程序."
+#define MsgNeedDotNetFx40       "此安装程序需要 .NET Framework 版本 4.0, 请安装 .NET Framework 版本, 然后重新运行此安装程序."
 
 [Setup]
 ; 注: AppId的值为单独标识该应用程序。
@@ -62,3 +74,85 @@ Name: "{commondesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: 
 [Run]
 Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent unchecked
 
+
+[code]
+//
+//
+function IsDotNET20Detected(): boolean;
+var
+    success: boolean;
+    install: cardinal;
+begin
+    success := RegQueryDWordValue(HKLM, 'SOFTWARE\Microsoft\NET Framework Setup\NDP\v2.0.50727', 'Install', install);
+    Result :=  success and (install = 1);
+end;
+
+
+//
+//
+function IsDotNET35Detected(): boolean;
+var
+    success: boolean;
+    install: cardinal;
+begin
+    success := RegQueryDWordValue(HKLM, 'SOFTWARE\Microsoft\NET Framework Setup\NDP\v3.5', 'Install', install);
+    Result :=  success and (install = 1);
+end;
+
+
+//
+//
+function IsDotNET40Detected(): boolean;
+var
+    success: boolean;
+    install: cardinal;
+begin
+    success := RegQueryDWordValue(HKLM, 'SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full', 'Install', install);
+    Result :=  success and (install = 1);
+end;
+
+//
+//
+//
+function CheckDotNetFx(): boolean;
+var 
+    success: boolean;
+begin
+    if {#DotNetFxNeed} = {#DotNetFx20} then
+    begin
+        success := IsDotNET20Detected();
+        if not success then
+        begin
+            MsgBox('{#MsgNeedDotNetFx20}', mbInformation, MB_OK);
+        end;
+    end;
+    
+    if {#DotNetFxNeed} = {#DotNetFx35} then
+    begin
+        success := IsDotNET35Detected();
+        if not success then
+        begin
+            MsgBox('{#MsgNeedDotNetFx35}', mbInformation, MB_OK);
+        end;
+    end;
+    
+    if {#DotNetFxNeed} = {#DotNetFx40} then
+    begin
+        success := IsDotNET40Detected();
+        if not success then
+        begin
+            MsgBox('{#MsgNeedDotNetFx40}', mbInformation, MB_OK);
+        end;
+    end;
+    
+    Result := success;
+end;
+
+
+//
+//
+//
+function InitializeSetup(): Boolean;
+begin
+    Result := CheckDotNetFx();
+end;
