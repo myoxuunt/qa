@@ -84,7 +84,7 @@ var
     install: cardinal;
 begin
     success := RegQueryDWordValue(HKLM, 'SOFTWARE\Microsoft\NET Framework Setup\NDP\v2.0.50727', 'Install', install);
-    Result :=  success and (install = 1);
+    Result := success and (install = 1);
 end;
 
 
@@ -96,7 +96,7 @@ var
     install: cardinal;
 begin
     success := RegQueryDWordValue(HKLM, 'SOFTWARE\Microsoft\NET Framework Setup\NDP\v3.5', 'Install', install);
-    Result :=  success and (install = 1);
+    Result := success and (install = 1);
 end;
 
 
@@ -108,7 +108,7 @@ var
     install: cardinal;
 begin
     success := RegQueryDWordValue(HKLM, 'SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full', 'Install', install);
-    Result :=  success and (install = 1);
+    Result := success and (install = 1);
 end;
 
 //
@@ -117,34 +117,20 @@ end;
 function CheckDotNetFx(): boolean;
 var 
     success: boolean;
+    message: string;
 begin
-    if {#DotNetFxNeed} = {#DotNetFx20} then
-    begin
-        success := IsDotNET20Detected();
-        if not success then
-        begin
-            MsgBox('{#MsgNeedDotNetFx20}', mbInformation, MB_OK);
-        end;
+    case {#DotNetFxNeed} of
+        {#DotNetFx20}: begin success := IsDotNET20Detected(); message := '{#MsgNeedDotNetFx20}'; end;
+        {#DotNetFx35}: begin success := IsDotNET35Detected(); message := '{#MsgNeedDotNetFx35}'; end;
+        {#DotNetFx40}: begin success := IsDotNET40Detected(); message := '{#MsgNeedDotNetFx40}'; end;
+    else
+         MsgBox('.Net Framework version error: {#DotNetFxNeed}', mbCriticalError, MB_OK);
     end;
     
-    if {#DotNetFxNeed} = {#DotNetFx35} then
+    if not success then 
     begin
-        success := IsDotNET35Detected();
-        if not success then
-        begin
-            MsgBox('{#MsgNeedDotNetFx35}', mbInformation, MB_OK);
-        end;
-    end;
-    
-    if {#DotNetFxNeed} = {#DotNetFx40} then
-    begin
-        success := IsDotNET40Detected();
-        if not success then
-        begin
-            MsgBox('{#MsgNeedDotNetFx40}', mbInformation, MB_OK);
-        end;
-    end;
-    
+        MsgBox( message, mbInformation, MB_OK);
+    end;
     Result := success;
 end;
 
