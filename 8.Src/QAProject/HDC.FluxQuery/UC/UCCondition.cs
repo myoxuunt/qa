@@ -23,8 +23,6 @@ namespace HDC.FluxQuery
         {
             InitializeComponent();
 
-            this.Begin = DateTime.Now.Date;
-            this.End = DateTime.Now.Date + TimeSpan.FromDays(1d);
         }
 
         /// <summary>
@@ -105,6 +103,12 @@ namespace HDC.FluxQuery
             {
                 QueryEvent(this, EventArgs.Empty);
             }
+        }
+
+        private void UCCondition_Load(object sender, EventArgs e)
+        {
+            this.Begin = DateTime.Now.Date;
+            this.End = DateTime.Now.Date + TimeSpan.FromDays(1d);
         }
     }
 }
