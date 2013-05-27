@@ -14,6 +14,9 @@ namespace HDC.FluxQuery
 
     public partial class frmDataQuery : Form
     {
+        static private string FluxDeviceType_scl6 = "scl6",
+            FluxDeviceType_data7203 = "Data7203";
+
         public frmDataQuery()
         {
             InitializeComponent();
@@ -47,10 +50,18 @@ namespace HDC.FluxQuery
         private KeyValueCollection GetStationNameKeyValues()
         {
             KeyValueCollection kvs = new KeyValueCollection();
-            DataTable tbl = DBI.GetStationDataTable("scl6");
+            DataTable tbl = DBI.GetStationDataTable(new string[] { FluxDeviceType_scl6, FluxDeviceType_data7203 });
             foreach (DataRow row in tbl.Rows)
             {
-                kvs.Add(new KeyValue(row["StationName"].ToString().Trim(), row));
+                string stationName = row["StationName"].ToString().Trim();
+                if (kvs.Find(stationName) == null)
+                {
+                    kvs.Add(new KeyValue(stationName, row));
+                }
+                else
+                {
+                    Console.WriteLine("include station name: " + stationName);
+                }
             }
 
             return kvs;

@@ -34,18 +34,31 @@ namespace HDC.FluxQuery
         #endregion //GetDefault
 
         #region GetStationDataTable
+        static public DataTable GetStationDataTable(string deviceType)
+        {
+            return GetStationDataTable(new string[] { deviceType });
+        }
+
         /// <summary>
         /// 
         /// </summary>
+        /// <param name="deviceTypes"></param>
         /// <returns></returns>
-        static public DataTable GetStationDataTable(string deviceType)
+        static public DataTable GetStationDataTable(string[] deviceTypes)
         {
             DBI dbi = GetDefault();
-            string sql = "select * from vStationDevice where DeviceType ='{0}' order by stationName";
-            sql = string.Format(sql, deviceType);
+            //string sql = "select * from vStationDevice where DeviceType ='{0}' order by stationName";
+            string sql = "select * from vStationDevice where DeviceType in ({0}) order by stationName";
+            sql = string.Format(sql, GetIn(deviceTypes));
             return dbi.ExecuteDataTable(sql);
         }
         #endregion //GetStationDataTable
+
+        static private string GetIn(string[] values)
+        {
+            string s = "'" + string.Join("','", values) + "'";
+            return s;
+        }
 
         #region ExecuteFluxDataTable
         /// <summary>
