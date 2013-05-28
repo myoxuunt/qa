@@ -109,10 +109,16 @@
     <Content Include="Config\ContentInfo.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Config\ContentInfo_for_hdc.xml">
+    <Content Include="Config\for_hdc\ContentInfo.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Config\ContentInfo_for_bc.xml">
+    <Content Include="Config\for_bc\ContentInfo_for_bc.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Config\for_hdc\Produce.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Config\Produce.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

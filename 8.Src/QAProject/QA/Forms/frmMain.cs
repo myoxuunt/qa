@@ -169,10 +169,11 @@ namespace QA
         /// </summary>
         private void About()
         {
+            Config cfg = QAApp.App.Config;
             string s = string.Format(
                 "{0}\r\n\r\n版本: {1}",
-                QAApp.App.Config.AppName,
-                Application.ProductVersion);
+                cfg.AppName,
+                cfg.Version);
             NUnit.UiKit.UserMessage.DisplayInfo(s);
         }
         #endregion //About

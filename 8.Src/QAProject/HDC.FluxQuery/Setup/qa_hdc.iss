@@ -130,7 +130,8 @@ begin
     if not success then 
     begin
         MsgBox( message, mbInformation, MB_OK);
-    end;
+    end;
+
     Result := success;
 end;
 

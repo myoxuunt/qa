@@ -5,6 +5,7 @@ using System.Text;
 
 namespace QA
 {
+
     public class ContentInfoFactory
     {
         /// <summary>
