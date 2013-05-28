@@ -55,6 +55,7 @@
     <Compile Include="Code\ContentInfoManager.cs" />
     <Compile Include="Code\Error.cs" />
     <Compile Include="Code\ErrorCollection.cs" />
+    <Compile Include="Code\PathUtils.cs" />
     <Compile Include="Forms\frmContentManager.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +120,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Config\Produce.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Config\for_hdc\Source.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

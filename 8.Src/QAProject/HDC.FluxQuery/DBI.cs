@@ -27,7 +27,8 @@ namespace HDC.FluxQuery
         {
             if (_dbi == null)
             {
-                _dbi = new DBI(ConfigurationManager.ConnectionStrings[1].ConnectionString);
+                string c = SourceConfigManager.SourceConfigs[0].Value;
+                _dbi = new DBI(c);
             }
             return _dbi;
         } static private DBI _dbi;
@@ -47,7 +48,6 @@ namespace HDC.FluxQuery
         static public DataTable GetStationDataTable(string[] deviceTypes)
         {
             DBI dbi = GetDefault();
-            //string sql = "select * from vStationDevice where DeviceType ='{0}' order by stationName";
             string sql = "select * from vStationDevice where DeviceType in ({0}) order by stationName";
             sql = string.Format(sql, GetIn(deviceTypes));
             return dbi.ExecuteDataTable(sql);

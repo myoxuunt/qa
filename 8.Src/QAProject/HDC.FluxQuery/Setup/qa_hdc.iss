@@ -1,12 +1,12 @@
 ; 脚本由 Inno Setup 脚本向导 生成！
 ; 有关创建 Inno Setup 脚本文件的详细资料请查阅帮助文档！
 
-#define MyAppName               "数据查询"
+#define MyAppName               "河道处数据查询"
 #define MyAppVersion            "1.0.0.0"
 #define MyAppPublisher          "LY-TECH"
 #define MyAppURL                ""
 #define MyAppExeName            "QA.exe"
-#define MyAppDir                "DataQuery"
+#define MyAppDir                "HdcDataQuery"
 #define CompanyName             "LY-TECH"
 
 #define QADir                   "..\..\QA\bin\Debug\"
@@ -59,7 +59,7 @@ Source: "{#QADir}\QA.exe.config"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#QADir}\QA.Interface.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#QADir}\Xdgk.Common.dll"; DestDir: "{app}"; Flags: ignoreversion
 
-Source: "{#QADir}\Config\ContentInfo_for_hdc.xml"; DestDir: "{app}\Config\"; DestName: "ContentInfo.xml"; Flags: ignoreversion
+Source: "{#QADir}\Config\for_hdc\*.xml"; DestDir: "{app}\Config"; Flags: ignoreversion
 
 Source: "{#ContentSourceDir}\HDC.FluxQuery.dll"; DestDir: "{app}\{#ContentDestDir}"; Flags: ignoreversion
 Source: "{#ContentSourceDir}\Config\FluxColumnConfig.xml"; DestDir: "{app}\{#ContentDestDir}\Config"; Flags: ignoreversion

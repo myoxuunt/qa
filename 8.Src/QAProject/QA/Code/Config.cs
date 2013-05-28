@@ -3,6 +3,7 @@ using System.Xml;
 using System.Configuration;
 using System.Collections.Generic;
 using System.Text;
+using Xdgk.Common;
 
 namespace QA
 {
