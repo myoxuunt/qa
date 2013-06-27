@@ -39,7 +39,7 @@ namespace HDC.FluxQuery
             CreateHDQueryUI(parentMenuItem, parentToolStrip);
         }
 
-#region CreateHDQueryUI
+        #region CreateHDQueryUI
         private void CreateHDQueryUI(System.Windows.Forms.ToolStripMenuItem parentMenuItem, System.Windows.Forms.ToolStrip parentToolStrip)
         {
             ToolStripItem hdMenuItem = parentMenuItem.DropDownItems.Add(Strings.mnu_hd_query);
@@ -55,21 +55,21 @@ namespace HDC.FluxQuery
 
             parentToolStrip.Items.Add(hdQueryButton);
         }
-#endregion //CreateHDQueryUI
+        #endregion //CreateHDQueryUI
 
-#region hdQueryButton_Click
+        #region hdQueryButton_Click
         void hdQueryButton_Click(object sender, EventArgs e)
         {
             FormHelper.ShowAndActiveFluxQuery(this.Container.MainForm, typeof(frmHDQuery));
         }
-#endregion //hdQueryButton_Click
+        #endregion //hdQueryButton_Click
 
-#region hdMenuItem_Click
+        #region hdMenuItem_Click
         void hdMenuItem_Click(object sender, EventArgs e)
         {
             FormHelper.ShowAndActiveFluxQuery(this.Container.MainForm, typeof(frmHDQuery));
         }
-#endregion //hdMenuItem_Click
+        #endregion //hdMenuItem_Click
     }
 
 }

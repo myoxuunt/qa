@@ -15,7 +15,7 @@ namespace QA
         }
 
         [Codeblast.Option(Short = "d")]
-            public bool IsDebugMode = false;
+        public bool IsDebugMode = false;
     }
 
 }

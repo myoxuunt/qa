@@ -1,10 +1,10 @@
-
 using System;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.Data;
 using System.Windows.Forms;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Text;
 using Xdgk.Common;
 
@@ -71,12 +71,13 @@ namespace HDC.FluxQuery
         internal static DataTable ExecuteFluxDataTable(DateTime b, DateTime e, string stationName)
         {
             string sql = "select * from vFluxData where stationName = @stationName and dt >= @b and dt < @e order by dt";
-            SqlCommand cmd = new SqlCommand ( sql );
-            DBIBase.AddSqlParameter(cmd, "stationName", stationName);
-            DBIBase.AddSqlParameter(cmd, "b", b);
-            DBIBase.AddSqlParameter(cmd, "e", e);
 
-            return GetDefault().ExecuteDataTable(cmd);
+            ListDictionary list = new ListDictionary();
+            list.Add("stationName", stationName);
+            list.Add("b", b);
+            list.Add("e", e);
+
+            return GetDefault().ExecuteDataTable(sql, list);
         }
         #endregion //ExecuteFluxDataTable
 
@@ -88,12 +89,13 @@ namespace HDC.FluxQuery
                 [DeviceAddress], [DT], [HDDataID] , value = case when vhddata.value = 1 then 'ÊÇ' else '·ñ' end
                 FROM [vHDData] 
                 where stationName = @stationName and dt >= @b and dt < @e order by dt";
-            SqlCommand cmd = new SqlCommand ( sql );
-            DBIBase.AddSqlParameter(cmd, "stationName", stationName);
-            DBIBase.AddSqlParameter(cmd, "b", b);
-            DBIBase.AddSqlParameter(cmd, "e", e);
 
-            return GetDefault().ExecuteDataTable(cmd);
+            ListDictionary list = new ListDictionary();
+            list.Add("stationName", stationName);
+            list.Add("b", b);
+            list.Add("e", e);
+
+            return GetDefault().ExecuteDataTable(sql, list);
         }
         #endregion //ExecuteHDDataTable
     }
