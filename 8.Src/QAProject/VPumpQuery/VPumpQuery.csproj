@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{8E662F76-DBDF-43E4-8E39-753F1A8F7950}</ProjectGuid>
+    <ProjectGuid>{A2C94997-194B-411A-A782-DD85F8D62E25}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>VGateQuery</RootNamespace>
-    <AssemblyName>VGateQuery</AssemblyName>
+    <RootNamespace>VPumpQuery</RootNamespace>
+    <AssemblyName>VPumpQuery</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,19 +40,19 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="Xdgk.Common, Version=0.13.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Xdgk.Common, Version=0.14.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\GlobalAssembly\Xdgk.Common\Xdgk.Common.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="VGateQueryContent.cs" />
+    <Compile Include="VPumpQueryContent.cs" />
     <Compile Include="DBI.cs" />
-    <Compile Include="frmGateData.cs">
+    <Compile Include="frmPumpData.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmGateData.Designer.cs">
-      <DependentUpon>frmGateData.cs</DependentUpon>
+    <Compile Include="frmPumpData.Designer.cs">
+      <DependentUpon>frmPumpData.cs</DependentUpon>
     </Compile>
     <Compile Include="frmGateDataLast.cs">
       <SubType>Form</SubType>
@@ -62,9 +62,9 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Strings.Designer.cs">
+      <DependentUpon>Strings.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Strings.resx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -82,8 +82,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="frmGateData.resx">
-      <DependentUpon>frmGateData.cs</DependentUpon>
+    <EmbeddedResource Include="frmPumpData.resx">
+      <DependentUpon>frmPumpData.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="frmGateDataLast.resx">
@@ -97,7 +97,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Config\GateColumnConfig.xml">
+    <Content Include="Config\PumpColumnConfig.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

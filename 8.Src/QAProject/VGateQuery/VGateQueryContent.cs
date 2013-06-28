@@ -7,7 +7,7 @@ using Xdgk.UI.Forms;
 
 namespace VGateQuery
 {
-    public class Class1 : ContentBase 
+    public class VGateQueryContent : ContentBase 
     {
         public override void Load(System.Windows.Forms.ToolStripMenuItem parentMenuItem, 
             System.Windows.Forms.ToolStrip parentToolStrip)

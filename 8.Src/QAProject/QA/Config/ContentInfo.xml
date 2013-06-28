@@ -12,6 +12,13 @@
     parentMenu="mnuData"
     parentToolbar="ToolStripMain">
   </contentInfo>
+  
+ <contentInfo 
+    path="f:\QAPROJECT\8.Src\QAProject\VPumpQuery\bin\Debug\VPumpQuery.dll"
+    parentMenu="mnuData"
+    parentToolbar="ToolStripMain">
+  </contentInfo>
+  
   <!--
    <contentInfo 
     path="c:\2.dll"
