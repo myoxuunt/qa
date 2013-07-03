@@ -1,7 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<columns>
-  <column dataPropertyName="StationName" text="站名" ></column>
-  <column dataPropertyName="DT" text="时间" format="G" width="160"></column>
-  <column dataPropertyName="InstantFlux" text="瞬时流量(m3/s)" format="f2" ></column>
-  <column dataPropertyName="sum" text="累计流量(m3)" format="f2" ></column>
-</columns>
