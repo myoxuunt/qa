@@ -40,12 +40,18 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="VPump100Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\C3\8.Src\VPump100Common\bin\Debug\VPump100Common.dll</HintPath>
+    </Reference>
     <Reference Include="Xdgk.Common, Version=0.14.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\GlobalAssembly\Xdgk.Common\Xdgk.Common.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helper.cs" />
+    <Compile Include="VPump100StatusCellFormatter.cs" />
     <Compile Include="VPumpQueryContent.cs" />
     <Compile Include="DBI.cs" />
     <Compile Include="frmPumpData.cs">

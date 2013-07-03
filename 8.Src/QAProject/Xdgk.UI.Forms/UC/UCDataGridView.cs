@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -92,7 +93,11 @@ namespace Xdgk.UI.Forms
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToAddRows = false;
+
+
         }
+
+
 
         /// <summary>
         /// 
@@ -101,5 +106,16 @@ namespace Xdgk.UI.Forms
         {
             get { return this.dataGridView1; }
         }
+
+        public string ColumnConfigFile
+        {
+            get { return _columnConfigFile; }
+            set 
+            { 
+                _columnConfigFile = value;
+                DGVColumnConfigCollection cfg = DGVColumnConfigCollectionFactory.CreateFromXml(value);
+                this.DgvColumnConfigs = cfg;
+            }
+        } private string _columnConfigFile;
     }
 }

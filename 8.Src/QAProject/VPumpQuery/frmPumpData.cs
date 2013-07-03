@@ -24,22 +24,17 @@ namespace VPumpQuery
         private void frmPumpData_Load(object sender, EventArgs e)
         {
             this.Text = Strings.title_pump_query;
-            SetDataGridViewColumns(this.ucDataGridView1, this.GetType());
+            Helper.SetDataGridViewColumns(this.ucDataGridView1);
             FillCondition();
             this.ucCondition1.QueryEvent += new EventHandler(ucCondition1_QueryEvent);
+            this.ucDataGridView1.DataGridView.CellFormatting += new DataGridViewCellFormattingEventHandler(DataGridView_CellFormatting);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        static internal void SetDataGridViewColumns(Xdgk.UI.Forms.UCDataGridView ucDataGridView, Type typeInAssembly)
+        void DataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            string path = System.IO.Path.Combine(
-                System.IO.Path.GetDirectoryName(typeInAssembly.Assembly.Location),
-                "Config\\PumpColumnConfig.xml");
-            DGVColumnConfigCollection cfg = DGVColumnConfigCollectionFactory.CreateFromXml(path);
-            ucDataGridView.DgvColumnConfigs = cfg;
+            VPump100StatusCellFormatter.Format((DataGridView)sender, e);
         }
+
 
         /// <summary>
         /// 
@@ -52,7 +47,7 @@ namespace VPumpQuery
             string stationName = this.ucCondition1.SelectedStationName;
             DateTime b = this.ucCondition1.Begin;
             DateTime end = this.ucCondition1.End;
-            if (stationName == "<全部>")
+            if (stationName == Strings.All)
             {
                 tbl = DBI.GetDefault().GetPumpDataTable(b, end);
             }
@@ -63,10 +58,13 @@ namespace VPumpQuery
             this.ucDataGridView1.DataSource = tbl;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         private void FillCondition()
         {
             KeyValueCollection kvs = new KeyValueCollection();
-            kvs.Add(new KeyValue("<全部>", ""));
+            kvs.Add(new KeyValue(Strings.All, string.Empty));
             DataTable tbl = DBI.GetDefault().GetStationDataTable("vPump100");
             foreach (DataRow row in tbl.Rows)
             {

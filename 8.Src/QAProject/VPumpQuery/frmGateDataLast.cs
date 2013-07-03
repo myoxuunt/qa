@@ -1,10 +1,13 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using VPump100Common;
+using Xdgk.Common;
 
 namespace VPumpQuery
 {
@@ -29,8 +32,15 @@ namespace VPumpQuery
 
         private void frmPumpDataLast_Load(object sender, EventArgs e)
         {
-            frmPumpData.SetDataGridViewColumns(this.ucDataGridView1, this.GetType());
+            Helper.SetDataGridViewColumns(this.ucDataGridView1);
+            this.ucDataGridView1.DataGridView.CellFormatting += new DataGridViewCellFormattingEventHandler(
+                DataGridView_CellFormatting);
             RefreshPumpDataLast();
+        }
+
+        void DataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            VPump100StatusCellFormatter.Format((DataGridView)sender, e);
         }
     }
 }
