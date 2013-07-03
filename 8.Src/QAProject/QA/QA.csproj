@@ -105,9 +105,16 @@
       <Project>{20CEC77A-150E-46A1-B742-EA1BCC4B57EE}</Project>
       <Name>QA.Interface</Name>
     </ProjectReference>
+    <ProjectReference Include="..\QRes\QRes.csproj">
+      <Project>{D5C92484-BC43-4649-BE42-68C46AD947B8}</Project>
+      <Name>QRes</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Config\ContentInfo.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Config\for_lx\ContentInfo.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Config\for_hdc\ContentInfo.xml">
@@ -119,10 +126,16 @@
     <Content Include="Config\for_hdc\Produce.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Config\Produce.xml">
+    <Content Include="Config\for_lx\Produce.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Config\for_hdc\Source.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Config\for_lx\Source.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Config\Produce.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Config\Source.xml">

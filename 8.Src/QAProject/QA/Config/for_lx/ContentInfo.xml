@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<contentInfoCollection>
+ <contentInfo 
+    path=".\c\VGate\VGateQuery.dll"
+    parentMenu="mnuData"
+    parentToolbar="ToolStripMain">
+  </contentInfo>
+  
+ <contentInfo 
+    path=".\c\VPump\VPumpQuery.dll"
+    parentMenu="mnuData"
+    parentToolbar="ToolStripMain">
+  </contentInfo>
+</contentInfoCollection>
