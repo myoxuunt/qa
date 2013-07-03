@@ -115,10 +115,6 @@
       <Project>{20CEC77A-150E-46A1-B742-EA1BCC4B57EE}</Project>
       <Name>QA.Interface</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Xdgk.UI.Forms\Xdgk.UI.Forms.csproj">
-      <Project>{2BDE4B0C-B8FE-4595-82D0-680D940E3AF5}</Project>
-      <Name>Xdgk.UI.Forms</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Bcdb.dbml">

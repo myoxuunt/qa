@@ -76,10 +76,6 @@
       <Project>{D5C92484-BC43-4649-BE42-68C46AD947B8}</Project>
       <Name>QRes</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Xdgk.UI.Forms\Xdgk.UI.Forms.csproj">
-      <Project>{2BDE4B0C-B8FE-4595-82D0-680D940E3AF5}</Project>
-      <Name>Xdgk.UI.Forms</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="frmGateData.resx">
