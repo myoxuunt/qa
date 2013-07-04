@@ -2,6 +2,6 @@
 <sources>
   <source>
     <key>connection</key>
-    <value>Provider=Microsoft.Jet.OLEDB.4.0;Data Source=..\DB\database1.mdb</value>
+    <value>Provider=Microsoft.Jet.OLEDB.4.0;Data Source=..\DB\lx.mdb</value>
   </source>
 </sources>
