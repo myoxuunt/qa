@@ -59,7 +59,7 @@ namespace VPumpQuery
             string s = @"select * from vPumpData 
                         where stationName = @stationName and 
                         DT >= @b and DT < @e
-                        order by stationName";
+                        order by DT";
 
             ListDictionary list = new ListDictionary();
             list.Add("stationName", stationName );
@@ -73,7 +73,7 @@ namespace VPumpQuery
         {
             string s = @"select * from vPumpData 
                         where DT >= @b and DT < @e
-                        order by stationName";
+                        order by DT";
 
             ListDictionary list = new ListDictionary();
             list.Add("b", b);
