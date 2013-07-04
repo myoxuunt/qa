@@ -2,6 +2,10 @@
 <columns>
   <column dataPropertyName="StationName" text="站名" ></column>
   <column dataPropertyName="DT" text="时间" format="G" width="160"></column>
+  <column dataPropertyName="BeforeWL" text="闸前水位(m)" format="f0" width="160"></column>
+  <column dataPropertyName="BehindWL" text="闸后水位(m)" format="f0" width="160"></column>
+  <column dataPropertyName="Height" text="闸高" format="G" width="160"></column>
   <column dataPropertyName="InstantFlux" text="瞬时流量(m3/s)" format="f2" ></column>
-  <column dataPropertyName="sum" text="累计流量(m3)" format="f2" ></column>
+  <column dataPropertyName="TotalAmount" text="累计流量(m3)" format="f0" width="160"></column>
+  <column dataPropertyName="RemainAmount" text="剩余水量(m3)" format="f0" width="160"></column>
 </columns>

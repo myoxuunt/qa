@@ -59,7 +59,7 @@ namespace VGateQuery
             string s = @"select * from vGateData 
                         where stationName = @stationName and 
                         DT >= @b and DT < @e
-                        order by stationName";
+                        order by dt";
 
             ListDictionary list = new ListDictionary();
             list.Add("stationName", stationName );
@@ -73,7 +73,7 @@ namespace VGateQuery
         {
             string s = @"select * from vGateData 
                         where DT >= @b and DT < @e
-                        order by stationName";
+                        order by dt";
 
             ListDictionary list = new ListDictionary();
             list.Add("b", b);
