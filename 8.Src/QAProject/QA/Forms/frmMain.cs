@@ -62,6 +62,15 @@ namespace QA
         }
         #endregion //FindToolStrip
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public StatusStrip FindStatusStrip()
+        {
+            return this.statusStripMain;
+        }
+
         #region IsDebugMode
         /// <summary>
         /// 

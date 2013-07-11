@@ -47,22 +47,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataQueryContent.cs" />
-    <Compile Include="DBI.cs" />
+    <Compile Include="Content\DataQueryContent.cs" />
+    <Compile Include="Code\DBI.cs" />
     <Compile Include="FormHelper.cs" />
-    <Compile Include="frmDataQuery.cs">
+    <Compile Include="Forms\frmDataQuery.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmDataQuery.Designer.cs">
+    <Compile Include="Forms\frmDataQuery.Designer.cs">
       <DependentUpon>frmDataQuery.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmHDQuery.cs">
+    <Compile Include="Forms\frmHDQuery.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmHDQuery.Designer.cs">
+    <Compile Include="Forms\frmHDQuery.Designer.cs">
       <DependentUpon>frmHDQuery.cs</DependentUpon>
     </Compile>
-    <Compile Include="HDContent.cs" />
+    <Compile Include="Content\HDContent.cs" />
     <Compile Include="Images.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -92,13 +92,17 @@
       <Project>{20CEC77A-150E-46A1-B742-EA1BCC4B57EE}</Project>
       <Name>QA.Interface</Name>
     </ProjectReference>
+    <ProjectReference Include="..\QRes\QRes.csproj">
+      <Project>{D5C92484-BC43-4649-BE42-68C46AD947B8}</Project>
+      <Name>QRes</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="frmDataQuery.resx">
+    <EmbeddedResource Include="Forms\frmDataQuery.resx">
       <DependentUpon>frmDataQuery.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmHDQuery.resx">
+    <EmbeddedResource Include="Forms\frmHDQuery.resx">
       <DependentUpon>frmHDQuery.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>

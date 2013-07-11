@@ -22,6 +22,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QRes", "QRes\QRes.csproj", "{D5C92484-BC43-4649-BE42-68C46AD947B8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Setup", "Setup", "{1C38BB94-FB98-4F1C-AF89-22DAAC96A5C8}"
+	ProjectSection(SolutionItems) = preProject
+		LX\Setup\lx.iss = LX\Setup\lx.iss
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VGateQuery", "LX\VGateQuery\VGateQuery.csproj", "{8E662F76-DBDF-43E4-8E39-753F1A8F7950}"
 EndProject

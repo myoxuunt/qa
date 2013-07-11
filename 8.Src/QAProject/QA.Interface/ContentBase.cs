@@ -73,6 +73,21 @@ namespace QA.Interface
         /// <param name="outParameters"></param>
         public abstract void Execute(string name, 
             ParameterCollection inParameters, ParameterCollection outParameters);
+
+        #region IContent 成员
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="parentStrip"></param>
+        virtual public void Load(StatusStrip parentStrip)
+        {
+            // do nothing
+            //
+        }
+
+        #endregion
     }
     
 

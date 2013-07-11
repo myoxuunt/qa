@@ -52,6 +52,7 @@
     <None Include="Resource\Lightning.ico" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\AlarmStatus.ico" />
     <Content Include="Resource\Graph.ICO" />
     <Content Include="Resource\info.ico" />
     <Content Include="Resource\Last.ico" />

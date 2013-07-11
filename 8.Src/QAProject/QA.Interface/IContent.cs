@@ -40,6 +40,12 @@ namespace QA.Interface
         /// <summary>
         /// 
         /// </summary>
+        /// <param name="parentStrip"></param>
+        void Load(StatusStrip parentStrip);
+
+        /// <summary>
+        /// 
+        /// </summary>
         /// <param name="name"></param>
         /// <param name="inParameters"></param>
         /// <param name="outParameters"></param>

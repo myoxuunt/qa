@@ -37,8 +37,11 @@ namespace QA
                     // 
                     ToolStripMenuItem parentMenuItem = mainForm.FindMenuItem(ci.ParentMenuItemName);
                     ToolStrip parentToolStrip = mainForm.FindToolStrip(ci.ParentToolStripName);
+                    StatusStrip statusStrip = mainForm.FindStatusStrip ();
+
                     container.ContentManager.Add(content);
                     content.Load(parentMenuItem, parentToolStrip);
+                    content.Load(statusStrip);
                 }
                 
             }

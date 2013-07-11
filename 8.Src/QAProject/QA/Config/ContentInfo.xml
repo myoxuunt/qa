@@ -1,23 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <contentInfoCollection>
- <!--<contentInfo 
+<contentInfo 
     path="f:\QAPROJECT\8.Src\QAProject\HDC.FluxQuery\bin\Debug\HDC.FluxQuery.dll"
     parentMenu="mnuData"
     parentToolbar="ToolStripMain">
-  </contentInfo>-->
+  </contentInfo>
   
   
+ <!--
  <contentInfo 
-    path="f:\QAPROJECT\8.Src\QAProject\VGateQuery\bin\Debug\VGateQuery.dll"
+    path="f:\QAPROJECT\8.Src\QAProject\LX\VGateQuery\bin\Debug\VGateQuery.dll"
     parentMenu="mnuData"
     parentToolbar="ToolStripMain">
   </contentInfo>
   
  <contentInfo 
-    path="f:\QAPROJECT\8.Src\QAProject\VPumpQuery\bin\Debug\VPumpQuery.dll"
+    path="f:\QAPROJECT\8.Src\QAProject\LX\VPumpQuery\bin\Debug\VPumpQuery.dll"
     parentMenu="mnuData"
     parentToolbar="ToolStripMain">
   </contentInfo>
+  -->
   
   <!--
    <contentInfo 
