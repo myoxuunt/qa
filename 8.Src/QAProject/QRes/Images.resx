@@ -133,7 +133,10 @@
   <data name="Lightning" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resource\Lightning.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="AlarmStatus" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\AlarmStatus.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="error_glint" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resource\error_glint.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="None" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resource\None.ico;System.Drawing.Icon, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

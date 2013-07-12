@@ -65,12 +65,30 @@ namespace HDC.FluxQuery {
         ///&lt;columns&gt;
         ///  &lt;column dataPropertyName=&quot;StationName&quot; text=&quot;站名&quot; &gt;&lt;/column&gt;
         ///  &lt;column dataPropertyName=&quot;DT&quot; text=&quot;时间&quot; format=&quot;G&quot; width=&quot;160&quot;&gt;&lt;/column&gt;
-        ///  &lt;column dataPropertyName=&quot;Value&quot; text=&quot;信息&quot; &gt;&lt;/column&gt;
+        ///  &lt;column dataPropertyName=&quot;AlarmInfo&quot; text=&quot;信息&quot; &gt;&lt;/column&gt;
         ///&lt;/columns&gt; 的本地化字符串。
         /// </summary>
         internal static string AlarmColumnConfig {
             get {
                 return ResourceManager.GetString("AlarmColumnConfig", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 {0} 条报警数据 的本地化字符串。
+        /// </summary>
+        internal static string AlarmWithCount {
+            get {
+                return ResourceManager.GetString("AlarmWithCount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 无报警数据 的本地化字符串。
+        /// </summary>
+        internal static string HasNotAlarm {
+            get {
+                return ResourceManager.GetString("HasNotAlarm", resourceCulture);
             }
         }
         
@@ -98,6 +116,15 @@ namespace HDC.FluxQuery {
         internal static string PowerAlarm {
             get {
                 return ResourceManager.GetString("PowerAlarm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 断电 的本地化字符串。
+        /// </summary>
+        internal static string PowerOff {
+            get {
+                return ResourceManager.GetString("PowerOff", resourceCulture);
             }
         }
         

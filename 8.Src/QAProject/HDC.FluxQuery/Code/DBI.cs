@@ -107,6 +107,20 @@ namespace HDC.FluxQuery
 
             return GetDefault().ExecuteDataTable(s, list);
         }
+
+        internal static DateTime GetLastAlarmDateTime()
+        {
+            string s = "select max(DT) from tblHDData";
+            object r = GetDefault().ExecuteScalar(s);
+            if (r == null || r == DBNull.Value)
+            {
+                return DateTime.Now;
+            }
+            else
+            {
+                return Convert.ToDateTime(r);
+            }
+        }
     }
 
 }

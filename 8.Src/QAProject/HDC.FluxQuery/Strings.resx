@@ -136,4 +136,13 @@
   <data name="mnu_flux_query" xml:space="preserve">
     <value>流量查询(&amp;L)</value>
   </data>
+  <data name="AlarmWithCount" xml:space="preserve">
+    <value>{0} 条报警数据</value>
+  </data>
+  <data name="HasNotAlarm" xml:space="preserve">
+    <value>无报警数据</value>
+  </data>
+  <data name="PowerOff" xml:space="preserve">
+    <value>断电</value>
+  </data>
 </root>

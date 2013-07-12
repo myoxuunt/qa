@@ -31,9 +31,23 @@ namespace HDC.FluxQuery
             _timer.Start();
         }
 
+        private DateTime GetFromDateTime()
+        {
+            if ( _fromDateTime == DateTime.MinValue )
+            {
+                _fromDateTime = DBI.GetLastAlarmDateTime();
+            }
+            return _fromDateTime;
+        } private DateTime _fromDateTime = DateTime.MinValue;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void _timer_Tick(object sender, EventArgs e)
         {
-            DateTime from = this.StationAlarms.GetLastAlarmDateTime();
+            DateTime from = GetFromDateTime();
 
             DataTable tbl = DBI.ExecutePowerAlarmDataTable(from);
             if (tbl.Rows.Count > 0)
@@ -43,23 +57,21 @@ namespace HDC.FluxQuery
                     StationAlarm a = CreateAlarm(row);
                     this.StationAlarms.Add(a);
                 }
+                _fromDateTime = this.StationAlarms.GetLastAlarmDateTime();
 
                 if (AddedAlarm != null)
                 {
                     AddedAlarm(this, EventArgs.Empty);
                 }
-
-                // TODO: play sound
-                //
-
             }
         }
+
 
         private StationAlarm CreateAlarm(DataRow row)
         {
             string name = row["StationName"].ToString();
             DateTime dt = Convert.ToDateTime(row["DT"]);
-            string info = "¶Ïµç";
+            string info = Strings.PowerOff;
 
             return new StationAlarm(dt, name, info);
         }
@@ -81,6 +93,15 @@ namespace HDC.FluxQuery
         } private StationAlarmCollection _stationAlarms;
         #endregion //StationAlarms
 
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        internal bool HasAlarm()
+        {
+            return this.StationAlarms.Count > 0;
+        }
     }
 
 }

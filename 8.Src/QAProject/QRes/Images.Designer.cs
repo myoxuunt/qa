@@ -60,10 +60,10 @@ namespace QRes {
             }
         }
         
-        internal static System.Drawing.Icon AlarmStatus {
+        internal static System.Drawing.Bitmap error_glint {
             get {
-                object obj = ResourceManager.GetObject("AlarmStatus", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
+                object obj = ResourceManager.GetObject("error_glint", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -98,6 +98,13 @@ namespace QRes {
         internal static System.Drawing.Icon Lightning {
             get {
                 object obj = ResourceManager.GetObject("Lightning", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Icon None {
+            get {
+                object obj = ResourceManager.GetObject("None", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }

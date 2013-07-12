@@ -1,4 +1,3 @@
-
 using System;
 using System.Drawing;
 using System.Data.SqlClient;
@@ -23,7 +22,7 @@ namespace HDC.FluxQuery
             this.OrderNumber = 3;
 
             _alarmStatusLabel = new ToolStripStatusLabel();
-            _alarmStatusLabel.Image = QRes.ImageManager.AlarmStatus.ToBitmap();
+            _alarmStatusLabel.Image = QRes.ImageManager.None.ToBitmap();
             _alarmStatusLabel.Click += new EventHandler(_alarmStatusLabel_Click);
 
             _alarmManager = new AlarmManager();
@@ -31,20 +30,52 @@ namespace HDC.FluxQuery
 
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void _alarmManager_AddedAlarm(object sender, EventArgs e)
         {
             RefreshStatus();
+            PlayAlarmSound();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        private void PlayAlarmSound()
+        {
+            string file = System.IO.Path.Combine(
+                System.IO.Path.GetDirectoryName(this.GetType().Assembly.Location),
+                "config\\alarm.wav"
+                );
+            System.Media.SoundPlayer p = new System.Media.SoundPlayer(file);
+
+            try
+            {
+                p.Play();
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         private void RefreshStatus()
         {
             if (this._alarmManager.StationAlarms.Count == 0)
             {
-                _alarmStatusLabel.Text = "无断电报警";
+                _alarmStatusLabel.Image = QRes.ImageManager.None.ToBitmap();
+                _alarmStatusLabel.Text = Strings.HasNotAlarm;
             }
             else
             {
-                _alarmStatusLabel.Text = string.Format("{0} 条断电报警", this._alarmManager.StationAlarms.Count);
+                _alarmStatusLabel.Image = QRes.ImageManager.ErrorLint;
+                _alarmStatusLabel.Text = string.Format(Strings.AlarmWithCount,
+                    this._alarmManager.StationAlarms.Count);
             }
         }
 
@@ -63,30 +94,28 @@ namespace HDC.FluxQuery
         public override void Load(StatusStrip parentStrip)
         {
 
-            //a.AutoToolTip = true;
-            //a.Width = 300;
-            //a.AutoSize = false;
-            //a.ForeColor = Color.Red;
-            //a.BackColor = Color.Black;
-            //a.Alignment = ToolStripItemAlignment.Right;
             parentStrip.Items.Add(_alarmStatusLabel);
-            //parentStrip.Text = "123";
 
             RefreshStatus();
 
             _alarmManager.Start();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void _alarmStatusLabel_Click(object sender, EventArgs e)
         {
-            ToolStripStatusLabel a = sender as ToolStripStatusLabel;
-            a.Text = DateTime.Now.ToString();
-
-            frmPowerAlaram f = new frmPowerAlaram(this._alarmManager);
-            f.ShowDialog();
-            if (f.IsClearedAlarms)
+            if (this._alarmManager.HasAlarm())
             {
-                RefreshStatus();
+                frmPowerAlaram f = new frmPowerAlaram(this._alarmManager);
+                f.ShowDialog();
+                if (f.IsClearedAlarms)
+                {
+                    RefreshStatus();
+                }
             }
         }
     }

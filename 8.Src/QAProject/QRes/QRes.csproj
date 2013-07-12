@@ -37,7 +37,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="ImageManager.cs" />
     <Compile Include="Images.Designer.cs">
       <DependentUpon>Images.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -52,10 +52,12 @@
     <None Include="Resource\Lightning.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\AlarmStatus.ico" />
+    <None Include="Resource\AlarmStatus.ico" />
+    <None Include="Resource\error_glint.gif" />
     <Content Include="Resource\Graph.ICO" />
     <Content Include="Resource\info.ico" />
     <Content Include="Resource\Last.ico" />
+    <Content Include="Resource\None.ico" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Images.resx">
@@ -63,6 +65,9 @@
       <LastGenOutput>Images.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

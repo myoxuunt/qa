@@ -141,6 +141,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AlarmColumnConfig.xml" />
+    <Content Include="Config\alarm.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Config\FluxColumnConfig.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
