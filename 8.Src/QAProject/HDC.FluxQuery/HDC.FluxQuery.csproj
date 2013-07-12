@@ -47,8 +47,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Content\AlarmContent.cs" />
+    <Compile Include="Content\AlarmManager.cs" />
     <Compile Include="Content\DataQueryContent.cs" />
     <Compile Include="Code\DBI.cs" />
+    <Compile Include="Content\StationAlarm.cs" />
+    <Compile Include="Content\StationAlarmCollection.cs" />
     <Compile Include="FormHelper.cs" />
     <Compile Include="Forms\frmDataQuery.cs">
       <SubType>Form</SubType>
@@ -63,6 +67,12 @@
       <DependentUpon>frmHDQuery.cs</DependentUpon>
     </Compile>
     <Compile Include="Content\HDContent.cs" />
+    <Compile Include="frmPowerAlaram.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPowerAlaram.Designer.cs">
+      <DependentUpon>frmPowerAlaram.cs</DependentUpon>
+    </Compile>
     <Compile Include="Images.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -106,6 +116,10 @@
       <DependentUpon>frmHDQuery.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmPowerAlaram.resx">
+      <DependentUpon>frmPowerAlaram.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Images.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Images.Designer.cs</LastGenOutput>
@@ -126,6 +140,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AlarmColumnConfig.xml" />
     <Content Include="Config\FluxColumnConfig.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
