@@ -17,7 +17,7 @@ namespace QRes
         static public Icon Info { get { return Images.info; } }
         static public Icon Last { get { return Images.Last; } }
         static public Icon Lightning { get { return Images.Lightning; } }
-        static public Image ErrorLint { get { return Images.error_glint; } }
+        static public Image ErrorGlint { get { return Images.error_glint; } }
         static public Icon None { get { return Images.None; } }
     }
 }

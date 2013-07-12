@@ -73,7 +73,7 @@ namespace HDC.FluxQuery
             }
             else
             {
-                _alarmStatusLabel.Image = QRes.ImageManager.ErrorLint;
+                _alarmStatusLabel.Image = QRes.ImageManager.ErrorGlint;
                 _alarmStatusLabel.Text = string.Format(Strings.AlarmWithCount,
                     this._alarmManager.StationAlarms.Count);
             }
