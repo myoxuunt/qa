@@ -121,6 +121,52 @@ namespace HDC.FluxQuery
                 return Convert.ToDateTime(r);
             }
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="_stationName"></param>
+        /// <param name="_month"></param>
+        /// <returns></returns>
+        internal static DataTable ExecuteFluxMonthReportDataTable(string stationName, DateTime month)
+        {
+            DateTime b = new DateTime(month.Year, month.Month, 1);
+            DateTime e = b.AddMonths(1);
+
+            string sql = 
+                @"select stationName, day(dt) as day, min(dt) as dtMin, max(dt) as dtMax, 
+                min(sum) as sumMin, max(sum) as sumMax 
+                from vfluxdata 
+                where stationName = @stationName and dt >= @begin and dt < @end 
+                group by stationname, day(dt)";
+
+            ListDictionary list = new ListDictionary();
+            list.Add("stationName", stationName);
+            list.Add("begin", b);
+            list.Add("end", e);
+
+            return GetDefault().ExecuteDataTable(sql, list);
+        }
+
+        internal static DataTable ExecutePowerMonthReportdDataTable(string stationName, DateTime month, int expectValue)
+        { 
+            DateTime b = new DateTime(month.Year, month.Month, 1);
+            DateTime e = b.AddMonths(1);
+
+            string sql =
+                @"select stationName, day(dt) as day, count(value) as count
+                from vHDData 
+                where stationName = @stationName and dt >= @begin and dt < @end and value = @value
+                group by stationName, day(dt)";
+
+            ListDictionary list = new ListDictionary();
+            list.Add("stationName", stationName);
+            list.Add("begin", b);
+            list.Add("end", e);
+            list.Add("value", expectValue);
+
+            return GetDefault().ExecuteDataTable(sql, list);
+        }
     }
 
 }

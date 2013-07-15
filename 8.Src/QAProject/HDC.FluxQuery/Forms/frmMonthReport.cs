@@ -40,6 +40,9 @@ namespace HDC.FluxQuery
         /// <param name="e"></param>
         void ucStationDT1Condition1_QueryEvent(object sender, EventArgs e)
         {
+            ReportFactory f = new ReportFactory(this.ucStationDT1Condition1.SelectedStationName,
+                this.ucStationDT1Condition1.SelectedDT1);
+            f.Create();
         }
 
         /// <summary>
