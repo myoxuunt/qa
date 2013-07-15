@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <columns>
-  <column dataPropertyName="DTText" text="日期"></column>
+  <column dataPropertyName="DTText" text="月份"></column>
   <column dataPropertyName="BeginDTText" text="起始时间" width="160"></column>
   <column dataPropertyName="EndDTText" text="结束时间" width="160"></column>
   <column dataPropertyName="BeginSumText" text="起始值(m3)" ></column>

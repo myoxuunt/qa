@@ -113,10 +113,14 @@ namespace HDC.FluxQuery {
         /// <summary>
         ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
         ///&lt;columns&gt;
-        ///  &lt;column dataPropertyName=&quot;StationName&quot; text=&quot;站名&quot; &gt;&lt;/column&gt;
-        ///  &lt;column dataPropertyName=&quot;DT&quot; text=&quot;时间&quot; format=&quot;G&quot; width=&quot;160&quot;&gt;&lt;/column&gt;
-        ///  &lt;column dataPropertyName=&quot;AlarmInfo&quot; text=&quot;信息&quot; &gt;&lt;/column&gt;
-        ///&lt;/columns&gt; 的本地化字符串。
+        ///  &lt;column dataPropertyName=&quot;DTText&quot; text=&quot;日期&quot;&gt;&lt;/column&gt;
+        ///  &lt;column dataPropertyName=&quot;BeginDTText&quot; text=&quot;起始时间&quot;&gt;&lt;/column&gt;
+        ///  &lt;column dataPropertyName=&quot;EndDTText&quot; text=&quot;结束时间&quot; &gt;&lt;/column&gt;
+        ///  &lt;column dataPropertyName=&quot;BeginSumText&quot; text=&quot;起始值(m3)&quot; &gt;&lt;/column&gt;
+        ///  &lt;column dataPropertyName=&quot;EndSumText&quot; text=&quot;结束值(m3)&quot; &gt;&lt;/column&gt;
+        ///  &lt;column dataPropertyName=&quot;UsedText&quot; text=&quot;用量(m3)&quot; &gt;&lt;/column&gt;
+        ///  &lt;column dataPropertyName=&quot;PowerOffRateText&quot; text=&quot;断电次数/总次数&quot; &gt;&lt;/column&gt;
+        ///&lt;/ [字符串的其余部分被截断]&quot;; 的本地化字符串。
         /// </summary>
         internal static string MonthReportColumnConfig {
             get {
@@ -157,6 +161,24 @@ namespace HDC.FluxQuery {
         internal static string title_hd_query {
             get {
                 return ResourceManager.GetString("title_hd_query", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
+        ///&lt;columns&gt;
+        ///  &lt;column dataPropertyName=&quot;DTText&quot; text=&quot;月份&quot;&gt;&lt;/column&gt;
+        ///  &lt;column dataPropertyName=&quot;BeginDTText&quot; text=&quot;起始时间&quot;&gt;&lt;/column&gt;
+        ///  &lt;column dataPropertyName=&quot;EndDTText&quot; text=&quot;结束时间&quot; &gt;&lt;/column&gt;
+        ///  &lt;column dataPropertyName=&quot;BeginSumText&quot; text=&quot;起始值(m3)&quot; &gt;&lt;/column&gt;
+        ///  &lt;column dataPropertyName=&quot;EndSumText&quot; text=&quot;结束值(m3)&quot; &gt;&lt;/column&gt;
+        ///  &lt;column dataPropertyName=&quot;UsedText&quot; text=&quot;用量(m3)&quot; &gt;&lt;/column&gt;
+        ///  &lt;column dataPropertyName=&quot;PowerOffRateText&quot; text=&quot;断电次数/总次数&quot; &gt;&lt;/column&gt;
+        ///&lt;/ [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        internal static string YearReportColumnConfig {
+            get {
+                return ResourceManager.GetString("YearReportColumnConfig", resourceCulture);
             }
         }
     }

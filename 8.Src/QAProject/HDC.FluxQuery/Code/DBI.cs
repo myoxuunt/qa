@@ -148,6 +148,26 @@ namespace HDC.FluxQuery
             return GetDefault().ExecuteDataTable(sql, list);
         }
 
+        internal static DataTable ExecuteFluxYearReportDataTable(string stationName, DateTime year)
+        {
+            DateTime b = new DateTime(year.Year, 1, 1);
+            DateTime e = b.AddYears(1);
+
+            string sql = 
+                @"select stationName, month(dt) as month, min(dt) as dtMin, max(dt) as dtMax, 
+                min(sum) as sumMin, max(sum) as sumMax 
+                from vfluxdata 
+                where stationName = @stationName and dt >= @begin and dt < @end 
+                group by stationname, month(dt)";
+
+            ListDictionary list = new ListDictionary();
+            list.Add("stationName", stationName);
+            list.Add("begin", b);
+            list.Add("end", e);
+
+            return GetDefault().ExecuteDataTable(sql, list);
+        }
+
         internal static DataTable ExecutePowerMonthReportdDataTable(string stationName, DateTime month, int expectValue)
         { 
             DateTime b = new DateTime(month.Year, month.Month, 1);
@@ -158,6 +178,26 @@ namespace HDC.FluxQuery
                 from vHDData 
                 where stationName = @stationName and dt >= @begin and dt < @end and value = @value
                 group by stationName, day(dt)";
+
+            ListDictionary list = new ListDictionary();
+            list.Add("stationName", stationName);
+            list.Add("begin", b);
+            list.Add("end", e);
+            list.Add("value", expectValue);
+
+            return GetDefault().ExecuteDataTable(sql, list);
+        }
+
+        internal static DataTable ExecutePowerYearReportdDataTable(string stationName, DateTime year, int expectValue)
+        { 
+            DateTime b = new DateTime(year.Year, 1, 1);
+            DateTime e = b.AddYears(1);
+
+            string sql =
+                @"select stationName, month(dt) as month, count(value) as count
+                from vHDData 
+                where stationName = @stationName and dt >= @begin and dt < @end and value = @value
+                group by stationName, month(dt)";
 
             ListDictionary list = new ListDictionary();
             list.Add("stationName", stationName);
