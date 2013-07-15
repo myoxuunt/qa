@@ -58,6 +58,7 @@
     <Content Include="Resource\info.ico" />
     <Content Include="Resource\Last.ico" />
     <Content Include="Resource\None.ico" />
+    <Content Include="Resource\report.ico" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Images.resx">

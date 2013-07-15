@@ -14,8 +14,7 @@ namespace HDC.FluxQuery
 
     public partial class frmDataQuery : Form
     {
-        static private string FluxDeviceType_scl6 = "scl6",
-            FluxDeviceType_data7203 = "Data7203";
+
 
         public frmDataQuery()
         {
@@ -40,14 +39,42 @@ namespace HDC.FluxQuery
             this.Text = Strings.title_flux_form;
 
             this.ucCondition1.BindStationName(
-                GetStationNameKeyValues()
+                StationNameSourceProvider.GetStationNameKeyValues()
                 );
             this.ucDataGridView1.DgvColumnConfigs =
                 DGVColumnConfigCollectionFactory.CreateFromXml(GetConfigFilePath ());
             this.ucCondition1.QueryEvent += new EventHandler(ucCondition1_QueryEvent);
         }
 
-        private KeyValueCollection GetStationNameKeyValues()
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void ucCondition1_QueryEvent(object sender, EventArgs e)
+        {
+            DateTime b = ucCondition1.Begin;
+            DateTime end = ucCondition1.End;
+            string stationName = ucCondition1.SelectedStationName;
+
+            DataTable tbl = DBI.ExecuteFluxDataTable(b, end, stationName);
+            //this.ucDataGridView1.DataGridView.AutoGenerateColumns = true;
+            this.ucDataGridView1.DataSource = tbl;
+        }
+    }
+
+    public class StationNameSourceProvider
+    {
+        static private string FluxDeviceType_scl6 = "scl6",
+            FluxDeviceType_data7203 = "Data7203";
+
+        static public KeyValueCollection GetFluxStationStationNameKeyValues()
+        {
+            return GetStationNameKeyValues();
+        }
+
+        static public KeyValueCollection GetStationNameKeyValues()
         {
             KeyValueCollection kvs = new KeyValueCollection();
             DataTable tbl = DBI.GetStationDataTable(new string[] { FluxDeviceType_scl6, FluxDeviceType_data7203 });
@@ -65,22 +92,6 @@ namespace HDC.FluxQuery
             }
 
             return kvs;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void ucCondition1_QueryEvent(object sender, EventArgs e)
-        {
-            DateTime b = ucCondition1.Begin;
-            DateTime end = ucCondition1.End;
-            string stationName = ucCondition1.SelectedStationName;
-
-            DataTable tbl = DBI.ExecuteFluxDataTable(b, end, stationName);
-            //this.ucDataGridView1.DataGridView.AutoGenerateColumns = true;
-            this.ucDataGridView1.DataSource = tbl;
         }
     }
 }

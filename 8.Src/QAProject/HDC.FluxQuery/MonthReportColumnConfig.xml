@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<columns>
+  <column dataPropertyName="StationName" text="站名" ></column>
+  <column dataPropertyName="DT" text="时间" format="G" width="160"></column>
+  <column dataPropertyName="AlarmInfo" text="信息" ></column>
+</columns>

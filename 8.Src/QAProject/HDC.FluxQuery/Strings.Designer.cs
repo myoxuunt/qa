@@ -111,6 +111,20 @@ namespace HDC.FluxQuery {
         }
         
         /// <summary>
+        ///   查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
+        ///&lt;columns&gt;
+        ///  &lt;column dataPropertyName=&quot;StationName&quot; text=&quot;站名&quot; &gt;&lt;/column&gt;
+        ///  &lt;column dataPropertyName=&quot;DT&quot; text=&quot;时间&quot; format=&quot;G&quot; width=&quot;160&quot;&gt;&lt;/column&gt;
+        ///  &lt;column dataPropertyName=&quot;AlarmInfo&quot; text=&quot;信息&quot; &gt;&lt;/column&gt;
+        ///&lt;/columns&gt; 的本地化字符串。
+        /// </summary>
+        internal static string MonthReportColumnConfig {
+            get {
+                return ResourceManager.GetString("MonthReportColumnConfig", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 断电报警 的本地化字符串。
         /// </summary>
         internal static string PowerAlarm {

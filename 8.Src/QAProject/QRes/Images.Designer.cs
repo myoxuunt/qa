@@ -108,5 +108,12 @@ namespace QRes {
                 return ((System.Drawing.Icon)(obj));
             }
         }
+        
+        internal static System.Drawing.Icon report {
+            get {
+                object obj = ResourceManager.GetObject("report", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
     }
 }

@@ -21,7 +21,7 @@ namespace HDC.FluxQuery
         public AlarmManager()
         {
             _timer = new Timer();
-            _timer.Interval = 1000 * 3;
+            _timer.Interval = 1000 * 30;
             _timer.Tick += new EventHandler(_timer_Tick);
 
         }

@@ -62,7 +62,7 @@ namespace HDC.FluxQuery
             fluxQueryButton.DisplayStyle = ToolStripItemDisplayStyle.ImageAndText;
             fluxQueryButton.TextImageRelation = TextImageRelation.ImageAboveText;
             fluxQueryButton.Text = Strings.title_flux_form;
-            fluxQueryButton.Image = Images.History.ToBitmap();
+            fluxQueryButton.Image = QRes.ImageManager.History.ToBitmap();
             fluxQueryButton.Click += new EventHandler(fluxQueryButton_Click);
 
             parentToolStrip.Items.Add(fluxQueryButton);
@@ -77,7 +77,7 @@ namespace HDC.FluxQuery
         /// <param name="e"></param>
         void fluxQueryButton_Click(object sender, EventArgs e)
         {
-            FormHelper.ShowAndActiveFluxQuery(this.Container.MainForm, typeof(frmDataQuery));
+            Xdgk.UI.Forms.FormHelper.ShowAndActiveFluxQuery(this.Container.MainForm, typeof(frmDataQuery));
         }
         #endregion //fluxQueryButton_Click
 
@@ -89,7 +89,7 @@ namespace HDC.FluxQuery
         /// <param name="e"></param>
         void item_Click(object sender, EventArgs e)
         {
-            FormHelper.ShowAndActiveFluxQuery(this.Container.MainForm, typeof(frmDataQuery));
+            Xdgk.UI.Forms.FormHelper.ShowAndActiveFluxQuery(this.Container.MainForm, typeof(frmDataQuery));
         }
         #endregion //item_Click
 
