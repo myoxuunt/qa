@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ucCondition1 = new HDC.FluxQuery.UCCondition();
-            this.ucDataGridView1 = new HDC.FluxQuery.UCDataGridView();
+            this.ucCondition1 = new Xdgk.UI.Forms.UCCondition();
+            this.ucDataGridView1 = new Xdgk.UI.Forms.UCDataGridView();
             this.SuspendLayout();
             // 
             // ucCondition1
@@ -67,7 +67,7 @@
 
         #endregion
 
-        private UCCondition ucCondition1;
-        private UCDataGridView ucDataGridView1;
+        private Xdgk.UI.Forms.UCCondition ucCondition1;
+        private Xdgk.UI.Forms.UCDataGridView ucDataGridView1;
     }
 }

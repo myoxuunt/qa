@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using Xdgk.Common.Export;
 
 namespace HDC.FluxQuery
 {
@@ -17,7 +18,7 @@ namespace HDC.FluxQuery
 
         private void frmYearReport_Load(object sender, EventArgs e)
         {
-            this.Text = "年统计表";
+            this.Text = Strings.StatisticsYear;
             SetUI();
             this.ucStationDT1Condition1.BindStationName(
                 StationNameSourceProvider.GetStationNameKeyValues());
@@ -46,13 +47,32 @@ namespace HDC.FluxQuery
 
         private void SetUI()
         {
-            this.ucStationDT1Condition1.DT1Label.Text = "年份:";
-            this.ucStationDT1Condition1.QueryButtonText = "统计";
+            this.ucStationDT1Condition1.DT1Label.Text = Strings.LabelYear;
+            this.ucStationDT1Condition1.QueryButtonText = Strings.Statistics;
 
             DateTimePicker dtp = this.ucStationDT1Condition1.DT1DateTimePicker;
-            dtp.Format = DateTimePickerFormat.Custom ;
+            dtp.Format = DateTimePickerFormat.Custom;
             dtp.CustomFormat = "yyyy";
             dtp.ShowUpDown = true;
+
+
+            //
+            //
+            Button exportBtn = new Button();
+            exportBtn.Text = Strings.ExportButtonText;
+            exportBtn.Click += new EventHandler(exportBtn_Click);
+            this.ucStationDT1Condition1.AddExtendButton(exportBtn);
+
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void exportBtn_Click(object sender, EventArgs e)
+        {
+            Exporter.Export(ucDataGridView1.DataGridView);
         }
     }
 }

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ucDataGridView1 = new HDC.FluxQuery.UCDataGridView();
+            this.ucDataGridView1 = new Xdgk.UI.Forms.UCDataGridView();
             this.btnOK = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -82,7 +82,7 @@
 
         #endregion
 
-        private UCDataGridView ucDataGridView1;
+        private Xdgk.UI.Forms.UCDataGridView ucDataGridView1;
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Button btnClear;
     }

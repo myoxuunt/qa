@@ -37,7 +37,7 @@
             this.ucStationDT1Condition1.Location = new System.Drawing.Point(12, 12);
             this.ucStationDT1Condition1.Name = "ucStationDT1Condition1";
             this.ucStationDT1Condition1.QueryButtonText = "查询";
-            this.ucStationDT1Condition1.SelectedDT1 = new System.DateTime(2013, 7, 15, 10, 9, 12, 643);
+            this.ucStationDT1Condition1.SelectedDT1 = new System.DateTime(2013, 7, 23, 10, 48, 1, 421);
             this.ucStationDT1Condition1.Size = new System.Drawing.Size(220, 119);
             this.ucStationDT1Condition1.TabIndex = 0;
             // 

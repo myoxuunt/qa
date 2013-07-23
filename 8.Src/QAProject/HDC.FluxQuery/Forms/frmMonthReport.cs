@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using Xdgk.Common;
+using Xdgk.Common.Export;
 
 namespace HDC.FluxQuery
 {
@@ -23,7 +24,7 @@ namespace HDC.FluxQuery
         /// <param name="e"></param>
         private void frmMonthReport_Load(object sender, EventArgs e)
         {
-            this.Text = "月统计表";
+            this.Text = Strings.StatisticsMonth;
             SetUI();
 
 
@@ -55,12 +56,30 @@ namespace HDC.FluxQuery
         /// </summary>
         private void SetUI()
         {
-            this.ucStationDT1Condition1.DT1Label.Text = "月份:";
-            this.ucStationDT1Condition1.QueryButtonText = "统计";
+            this.ucStationDT1Condition1.DT1Label.Text = Strings.LabelMonth;
+            this.ucStationDT1Condition1.QueryButtonText = Strings.Statistics;
             DateTimePicker dtp = this.ucStationDT1Condition1.DT1DateTimePicker;
             dtp.Format = DateTimePickerFormat.Custom;
             dtp.CustomFormat = "yyyy-MM";
             dtp.ShowUpDown = true;
+
+
+            //
+            //
+            Button exportBtn = new Button();
+            exportBtn.Text = Strings.ExportButtonText;
+            exportBtn.Click += new EventHandler(exportBtn_Click);
+            this.ucStationDT1Condition1.AddExtendButton(exportBtn);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void exportBtn_Click(object sender, EventArgs e)
+        {
+            Exporter.Export(ucDataGridView1.DataGridView);
         }
     }
 }
