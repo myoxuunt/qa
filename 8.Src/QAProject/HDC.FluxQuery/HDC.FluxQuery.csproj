@@ -135,7 +135,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="AlarmColumnConfig.xml" />
+    <EmbeddedResource Include="Config\AlarmColumnConfig.xml" />
     <EmbeddedResource Include="Forms\frmMonthReport.resx">
       <DependentUpon>frmMonthReport.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -147,12 +147,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Setup\qa_hdc.iss" />
-    <EmbeddedResource Include="YearReportColumnConfig.xml" />
+    <EmbeddedResource Include="Config\YearReportColumnConfig.xml" />
     <EmbeddedResource Include="Forms\frmYearReport.resx">
       <DependentUpon>frmYearReport.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="MonthReportColumnConfig.xml" />
+    <EmbeddedResource Include="Config\MonthReportColumnConfig.xml" />
     <None Include="Resource\Lightning.ico" />
     <None Include="Resource\History.ico" />
   </ItemGroup>
