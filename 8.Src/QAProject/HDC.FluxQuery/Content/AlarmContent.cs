@@ -14,9 +14,15 @@ namespace HDC.FluxQuery
 {
     public class AlarmContent : ContentBase
     {
+        #region Members
         private AlarmManager _alarmManager;
         private ToolStripItem _alarmStatusLabel;
+        #endregion //Members
 
+        #region AlarmContent
+        /// <summary>
+        /// 
+        /// </summary>
         public AlarmContent()
         {
             this.OrderNumber = 3;
@@ -29,18 +35,22 @@ namespace HDC.FluxQuery
             _alarmManager.AddedAlarm += new EventHandler(_alarmManager_AddedAlarm);
 
         }
+        #endregion //AlarmContent
 
+        #region _alarmManager_AddedAlarm
         /// <summary>
         /// 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        void _alarmManager_AddedAlarm(object sender, EventArgs e)
+        private void _alarmManager_AddedAlarm(object sender, EventArgs e)
         {
             RefreshStatus();
             PlayAlarmSound();
         }
+        #endregion //_alarmManager_AddedAlarm
 
+        #region PlayAlarmSound
         /// <summary>
         /// 
         /// </summary>
@@ -60,7 +70,9 @@ namespace HDC.FluxQuery
             {
             }
         }
+        #endregion //PlayAlarmSound
 
+        #region RefreshStatus
         /// <summary>
         /// 
         /// </summary>
@@ -78,19 +90,40 @@ namespace HDC.FluxQuery
                     this._alarmManager.StationAlarms.Count);
             }
         }
+        #endregion //RefreshStatus
 
+        #region Load
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="parentMenuItem"></param>
+        /// <param name="parentToolStrip"></param>
         public override void Load(ToolStripMenuItem parentMenuItem, ToolStrip parentToolStrip)
         {
             // do nothing
             //
         }
+        #endregion //Load
 
+        #region Execute
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="inParameters"></param>
+        /// <param name="outParameters"></param>
         public override void Execute(string name, ParameterCollection inParameters, ParameterCollection outParameters)
         {
             // do nothing
             //
         }
+        #endregion //Execute
 
+        #region Load
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="parentStrip"></param>
         public override void Load(StatusStrip parentStrip)
         {
 
@@ -100,7 +133,9 @@ namespace HDC.FluxQuery
 
             _alarmManager.Start();
         }
+        #endregion //Load
 
+        #region _alarmStatusLabel_Click
         /// <summary>
         /// 
         /// </summary>
@@ -118,6 +153,6 @@ namespace HDC.FluxQuery
                 }
             }
         }
+        #endregion //_alarmStatusLabel_Click
     }
-
 }

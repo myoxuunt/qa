@@ -55,6 +55,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Code\FluxQueryConfig.cs" />
     <Compile Include="Content\AlarmContent.cs" />
     <Compile Include="Content\AlarmManager.cs" />
     <Compile Include="Content\DataQueryContent.cs" />
@@ -153,6 +154,7 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Config\MonthReportColumnConfig.xml" />
+    <None Include="App.config" />
     <None Include="Resource\Lightning.ico" />
     <None Include="Resource\History.ico" />
   </ItemGroup>

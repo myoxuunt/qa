@@ -1,36 +1,51 @@
-
 using System;
-using System.Drawing;
-using System.Data.SqlClient;
-using System.Configuration;
 using System.Data;
 using System.Windows.Forms;
-using System.Collections.Generic;
-using System.Text;
-using Xdgk.Common;
-using QA.Interface;
-
 
 namespace HDC.FluxQuery
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class AlarmManager
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public event EventHandler AddedAlarm;
 
+        /// <summary>
+        /// 
+        /// </summary>
         private Timer _timer;
+
+        #region AlarmManager
+        /// <summary>
+        /// 
+        /// </summary>
         public AlarmManager()
         {
             _timer = new Timer();
-            _timer.Interval = 1000 * 30;
+            _timer.Interval = Code.FluxQueryConfig.AlarmCheckInterval;
             _timer.Tick += new EventHandler(_timer_Tick);
-
         }
+        #endregion //AlarmManager
 
+        #region Start
+        /// <summary>
+        /// 
+        /// </summary>
         public void Start()
         {
             _timer.Start();
         }
+        #endregion //Start
 
+        #region GetFromDateTime
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         private DateTime GetFromDateTime()
         {
             if ( _fromDateTime == DateTime.MinValue )
@@ -39,7 +54,9 @@ namespace HDC.FluxQuery
             }
             return _fromDateTime;
         } private DateTime _fromDateTime = DateTime.MinValue;
+        #endregion //GetFromDateTime
 
+        #region _timer_Tick
         /// <summary>
         /// 
         /// </summary>
@@ -65,8 +82,14 @@ namespace HDC.FluxQuery
                 }
             }
         }
+        #endregion //_timer_Tick
 
-
+        #region CreateAlarm
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="row"></param>
+        /// <returns></returns>
         private StationAlarm CreateAlarm(DataRow row)
         {
             string name = row["StationName"].ToString();
@@ -75,6 +98,7 @@ namespace HDC.FluxQuery
 
             return new StationAlarm(dt, name, info);
         }
+        #endregion //CreateAlarm
 
         #region StationAlarms
         /// <summary>
@@ -94,6 +118,7 @@ namespace HDC.FluxQuery
         #endregion //StationAlarms
 
 
+        #region HasAlarm
         /// <summary>
         /// 
         /// </summary>
@@ -102,6 +127,7 @@ namespace HDC.FluxQuery
         {
             return this.StationAlarms.Count > 0;
         }
+        #endregion //HasAlarm
     }
 
 }

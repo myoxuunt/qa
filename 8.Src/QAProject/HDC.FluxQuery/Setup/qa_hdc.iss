@@ -2,7 +2,7 @@
 ; 有关创建 Inno Setup 脚本文件的详细资料请查阅帮助文档！
 
 #define MyAppName               "河道处数据查询"
-#define MyAppVersion            "1.0.0.0"
+#define MyAppVersion            "1.1.0.0"
 #define MyAppPublisher          "LY-TECH"
 #define MyAppURL                ""
 #define MyAppExeName            "QA.exe"
@@ -56,13 +56,21 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 [Files]
 Source: "{#QADir}\QA.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#QADir}\QA.exe.config"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#QADir}\QRes.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#QADir}\QA.Interface.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "{#QADir}\Xdgk.Common.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "{#QADir}\DbNetLink.dll"; DestDir: "{app}"; Flags: ignoreversion
 
 Source: "{#QADir}\Config\for_hdc\*.xml"; DestDir: "{app}\Config"; Flags: ignoreversion
 
+;
+;
 Source: "{#ContentSourceDir}\HDC.FluxQuery.dll"; DestDir: "{app}\{#ContentDestDir}"; Flags: ignoreversion
+Source: "{#ContentSourceDir}\HDC.FluxQuery.dll.config"; DestDir: "{app}\{#ContentDestDir}"; Flags: ignoreversion
 Source: "{#ContentSourceDir}\Config\FluxColumnConfig.xml"; DestDir: "{app}\{#ContentDestDir}\Config"; Flags: ignoreversion
+Source: "{#ContentSourceDir}\FlexCel.dll"; DestDir: "{app}\{#ContentDestDir}"; Flags: ignoreversion
+Source: "{#ContentSourceDir}\Xdgk.Common.Export.dll"; DestDir: "{app}\{#ContentDestDir}"; Flags: ignoreversion
+
 
 ; 注意: 不要在任何共享系统文件上使用“Flags: ignoreversion”
 
