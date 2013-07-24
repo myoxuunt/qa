@@ -191,11 +191,29 @@ namespace HDC.FluxQuery {
         }
         
         /// <summary>
+        ///   查找类似 月统计表(&amp;M) 的本地化字符串。
+        /// </summary>
+        internal static string StatisticsMonthMenu {
+            get {
+                return ResourceManager.GetString("StatisticsMonthMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 年统计表 的本地化字符串。
         /// </summary>
         internal static string StatisticsYear {
             get {
                 return ResourceManager.GetString("StatisticsYear", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 年统计表(&amp;Y) 的本地化字符串。
+        /// </summary>
+        internal static string StatisticsYearMenu {
+            get {
+                return ResourceManager.GetString("StatisticsYearMenu", resourceCulture);
             }
         }
         
