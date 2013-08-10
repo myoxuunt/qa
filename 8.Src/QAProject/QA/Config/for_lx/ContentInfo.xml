@@ -6,9 +6,9 @@
     parentToolbar="ToolStripMain">
   </contentInfo>
   
- <contentInfo 
-    path=".\c\VPump\VPumpQuery.dll"
-    parentMenu="mnuData"
-    parentToolbar="ToolStripMain">
-  </contentInfo>
+ <!--<contentinfo 
+    path=".\c\vpump\vpumpquery.dll"
+    parentmenu="mnudata"
+    parenttoolbar="toolstripmain">
+  </contentinfo>-->
 </contentInfoCollection>

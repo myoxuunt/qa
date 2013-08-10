@@ -4,7 +4,7 @@
 #define MyAppName               "滦下"
 
 #define QAAppName               "滦下数据查询"
-#define MyAppVersion            "1.0.0.0"
+#define MyAppVersion            "1.1.0.0"
 #define MyAppPublisher          "LY-TECH"
 #define MyAppURL                ""
 #define QAExeName               "QA.exe"
