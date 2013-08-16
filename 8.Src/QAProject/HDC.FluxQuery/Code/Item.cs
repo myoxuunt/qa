@@ -1,4 +1,3 @@
-
 using System;
 using System.Data;
 using System.Collections.Generic;
@@ -7,6 +6,15 @@ using System.Text;
 
 namespace HDC.FluxQuery
 {
+    internal class FormatStringProvider
+    {
+        private FormatStringProvider()
+        {
+
+        }
+
+        internal const string DOUBLE_FORMAT = "f2";
+    }
     /// <summary>
     /// 
     /// </summary>
@@ -204,9 +212,9 @@ namespace HDC.FluxQuery
             {
                 r.BeginDTText = this.BeginDT.ToString(valueDateTimeFormat );
                 r.EndDTText = this.EndDT.ToString(valueDateTimeFormat);
-                r.BeginSumText = this.BeginSum.ToString();
-                r.EndSumText = this.EndSum.ToString();
-                r.UsedText = this.Used.ToString();
+                r.BeginSumText = this.BeginSum.ToString(FormatStringProvider.DOUBLE_FORMAT);
+                r.EndSumText = this.EndSum.ToString(FormatStringProvider.DOUBLE_FORMAT);
+                r.UsedText = this.Used.ToString(FormatStringProvider.DOUBLE_FORMAT);
             }
             else
             {

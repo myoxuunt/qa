@@ -9,7 +9,6 @@ namespace HDC.FluxQuery
 {
     public class ItemCollection : Xdgk.Common.Collection<Item>
     {
-
         public ReportItemCollection ToMonthReportItems()
         {
             return ToReportItems("yyyy-MM", "yyyy-MM-dd HH:mm:ss");
@@ -69,9 +68,9 @@ namespace HDC.FluxQuery
             {
                 r.BeginDTText = b.BeginDT.ToString();
                 r.EndDTText = e.EndDT.ToString();
-                r.BeginSumText = b.BeginSum.ToString();
-                r.EndSumText = e.EndSum.ToString();
-                r.UsedText = (e.EndSum - b.BeginSum).ToString();
+                r.BeginSumText = b.BeginSum.ToString(FormatStringProvider.DOUBLE_FORMAT);
+                r.EndSumText = e.EndSum.ToString(FormatStringProvider.DOUBLE_FORMAT);
+                r.UsedText = (e.EndSum - b.BeginSum).ToString(FormatStringProvider.DOUBLE_FORMAT);
             }
 
             if (powerAllCount > 0)

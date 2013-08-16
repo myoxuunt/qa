@@ -2,7 +2,7 @@
 ; 有关创建 Inno Setup 脚本文件的详细资料请查阅帮助文档！
 
 #define MyAppName               "河道处数据查询"
-#define MyAppVersion            "1.1.0.0"
+#define MyAppVersion            "1.2.0.0"
 #define MyAppPublisher          "LY-TECH"
 #define MyAppURL                ""
 #define MyAppExeName            "QA.exe"
